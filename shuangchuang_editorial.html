@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#e9e1d1">
+<title>昆冈众创｜采编部招新 · WRITE WHAT DESERVES TO REMAIN</title>
+<style>
+:root{--paper:#e9e1d1;--paper2:#f4efe5;--ink:#181512;--muted:#6e655d;--vermilion:#a92f2a;--red:#7d201d;--jade:#52685e;--gold:#9b7a43;--line:#342c251f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Georgia,"Songti SC","STSong",serif;overflow-x:hidden}
+::selection{background:#a92f2a;color:#f7f0e3}.wrap{width:min(1220px,calc(100% - 42px));margin:auto}
+#paperfield{position:fixed;inset:0;width:100%;height:100%;z-index:-4;background:linear-gradient(100deg,#e6ddcc,#f1eadd 48%,#e7dfd1)}
+.fiber{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.33;background-image:repeating-linear-gradient(7deg,transparent 0 7px,#473c2f09 8px 8.5px),radial-gradient(#493e320d .7px,transparent .8px);background-size:auto,7px 7px}
+.marginline{position:fixed;left:4.5vw;top:0;height:100%;width:1px;background:#a92f2a1c;z-index:-1}.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--vermilion);z-index:99}
+.cursor-note{position:fixed;pointer-events:none;z-index:90;font:10px ui-monospace,monospace;color:#a92f2a99;letter-spacing:.12em;transform:translate(14px,16px)}
+.mono,.eyebrow{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.eyebrow{font-size:10px;letter-spacing:.18em;color:var(--vermilion);font-weight:800}
+.hero{min-height:100vh;display:grid;align-items:center;position:relative;overflow:hidden;border-bottom:1px solid #332b2425}
+.hero:before{content:"稿";position:absolute;right:-.03em;bottom:-.25em;font-size:min(44vw,580px);font-family:"STSong","Songti SC",serif;color:#18151205;line-height:1}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:end}
+.docmeta{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font:700 10px ui-monospace;letter-spacing:.08em}.docmeta span{padding:10px;border-right:1px solid #18151233}.docmeta span:last-child{border:0}
+.hero h1{font-size:clamp(68px,12.5vw,166px);line-height:.73;letter-spacing:-.075em;margin:30px 0}.hero h1 i{font-style:normal;color:var(--vermilion)}
+.hero .dek{max-width:850px;font-size:20px;line-height:1.75;color:#4f4740}.hero .dek strong{color:var(--ink)}
+.manuscript{position:relative;min-height:560px;background:#f7f1e6;border:1px solid #241f1b35;box-shadow:18px 24px 55px #3d30201b;transform:rotate(1.2deg);padding:34px 30px}
+.manuscript:before{content:"采编部 / 内部校样";font:700 10px ui-monospace;color:#756b62;letter-spacing:.12em}
+.line{height:1px;background:#372e2720;margin:26px 0}.scribble{font-size:16px;line-height:2;color:#4e4640}.mark{position:absolute;color:var(--vermilion);font-family:"STKaiti","KaiTi",serif;transform:rotate(-7deg)}.m1{right:18px;top:115px;font-size:22px}.m2{left:28px;bottom:70px;font-size:18px}.seal{position:absolute;right:35px;bottom:30px;width:75px;height:75px;border:3px double var(--vermilion);color:var(--vermilion);display:grid;place-items:center;font-family:"STKaiti","KaiTi",serif;font-size:22px;line-height:1.05;transform:rotate(-8deg);opacity:.82}
+.section{padding:105px 0;border-bottom:1px solid #2b251f26;position:relative}.section:nth-of-type(even){background:#fff9ee45}
+.num{font:800 10px ui-monospace;color:var(--vermilion);letter-spacing:.16em}.section h2{font-size:clamp(42px,6.3vw,80px);line-height:.96;letter-spacing:-.045em;margin:18px 0 28px}.lead{max-width:900px;font-size:20px;line-height:1.8;color:#514941}
+.pull{margin:45px 0;padding:30px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);font-size:clamp(26px,3.2vw,43px);line-height:1.5}.pull em{color:var(--vermilion);font-style:normal}
+.folio{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:42px}.sheet{position:relative;background:#f6f0e5a8;border:1px solid #3a302735;padding:26px;min-height:280px;transition:.35s;overflow:hidden}.sheet:hover{transform:translateY(-6px) rotate(-.25deg);box-shadow:12px 18px 35px #33281813}.sheet:after{content:"";position:absolute;left:0;bottom:0;width:0;height:3px;background:var(--vermilion);transition:.45s}.sheet:hover:after{width:100%}.sheet b{font:800 10px ui-monospace;color:var(--vermilion);letter-spacing:.1em}.sheet h3{font-size:27px;margin:70px 0 12px}.sheet p{color:#665d55;line-height:1.75}.s7{grid-column:span 7}.s5{grid-column:span 5}.s4{grid-column:span 4}.s6{grid-column:span 6}
+.classical{display:grid;grid-template-columns:230px 1fr;gap:45px;margin-top:45px}.vertical{writing-mode:vertical-rl;font-family:"STKaiti","KaiTi",serif;font-size:31px;letter-spacing:.16em;color:var(--vermilion);border-left:1px solid #a92f2a55;padding-left:25px;justify-self:center}.craft-row{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:25px 0;border-top:1px solid #3028202d}.craft-row b{font:800 10px ui-monospace;color:var(--jade)}.craft-row h3{font-size:29px;margin:0 0 8px}.craft-row p{color:#665d55;line-height:1.75;margin:0}
+.desk{margin-top:45px;border:1px solid var(--ink);background:#eee5d6;display:grid;grid-template-columns:repeat(6,1fr)}.desk article{padding:22px;min-height:275px;border-right:1px solid #18151255;position:relative}.desk article:last-child{border:0}.desk b{font:800 10px ui-monospace;color:var(--vermilion)}.desk h3{margin-top:80px;font-size:23px}.desk p{font-size:14px;color:#625950;line-height:1.7}.desk article:hover{background:#f7f0e5}
+.interview{margin-top:45px;background:#1a1714;color:#eee5d6;padding:38px;position:relative;box-shadow:16px 20px 0 #9b7a4314}.interview:before{content:"REC ●  00:17:42";font:700 10px ui-monospace;color:#d95b52}.q{display:grid;grid-template-columns:75px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid #ffffff18}.q:last-child{border:0}.q b{color:#d95b52;font:700 11px ui-monospace}.q p{margin:0;font-size:18px;line-height:1.6;color:#ded3c5}
+.redpen{position:absolute;right:28px;top:26px;color:#d95b52;font-family:"STKaiti","KaiTi",serif;font-size:19px;transform:rotate(-5deg)}
+.check{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:40px}.check div{border-top:3px solid var(--ink);padding:20px 5px;min-height:170px}.check b{font:800 10px ui-monospace;color:var(--vermilion)}.check h3{font-size:23px}.check p{color:#665d55;line-height:1.7}
+.fieldnote{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;margin-top:45px}.notebook{background:#f8f1e5;padding:35px;border:1px solid #44382d42;box-shadow:8px 13px 25px #362a1e16;background-image:repeating-linear-gradient(transparent 0 31px,#887b6e26 32px)}.notebook h3{font-size:28px;margin-top:0}.notebook p{line-height:2;color:#5f554c}.timeline{border-left:1px solid var(--vermilion);padding-left:30px}.time{position:relative;padding:0 0 28px}.time:before{content:"";position:absolute;left:-35px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--paper);border:2px solid var(--vermilion)}.time b{font:800 10px ui-monospace;color:var(--vermilion)}.time h3{margin:7px 0}.time p{color:#665d55;line-height:1.7}
+.archive{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:40px}.archive div{border:1px solid #30271f38;padding:24px;min-height:210px;background:#f3ecdf80}.archive b{font:800 10px ui-monospace;color:var(--gold)}.archive h3{margin-top:55px}.archive p{color:#665d55}
+.join{background:#191613;color:#eee4d5}.join .num{color:#d65a50}.join h2{color:#f1e8db}.join .lead{color:#bdb1a2}.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:40px}.joinbox{border:1px solid #ffffff28;padding:28px}.joinbox h3{font-size:28px}.joinbox p,.joinbox li{color:#bdb1a2;line-height:1.8}.joinbox b{color:#d65a50;font:700 10px ui-monospace}
+.faq{border-bottom:1px solid #392f2730}.faq button{width:100%;border:0;background:none;color:var(--ink);padding:23px 0;display:flex;justify-content:space-between;text-align:left;font:18px Georgia,"Songti SC",serif;cursor:pointer}.faq button b{color:var(--vermilion);transition:.3s}.faq p{display:none;max-width:900px;color:#655b53;line-height:1.8;padding:0 0 23px;margin:0}.faq.open p{display:block}.faq.open button b{transform:rotate(45deg)}
+.coda{min-height:100vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(180deg,#e8dfcf,#eee6d8)}.coda:before{content:"文";position:absolute;font-size:min(56vw,700px);font-family:"STSong",serif;color:#181512035}.coda .poem{position:relative;font-family:"STKaiti","KaiTi",serif;font-size:clamp(48px,8vw,104px);line-height:1.25}.coda .poem i{font-style:normal;color:var(--vermilion)}.coda p{position:relative;max-width:760px;margin:32px auto;color:#6b6158;line-height:1.9}.coda small{position:relative;font:800 10px ui-monospace;color:var(--vermilion);letter-spacing:.32em}
+.sources{display:grid;grid-template-columns:1fr 1fr;gap:10px}.sources a{display:flex;justify-content:space-between;color:#61574e;text-decoration:none;border-bottom:1px solid #3b31283b;padding:13px 0;font-size:13px}.sources a:hover{color:var(--vermilion)}
+.rv{opacity:0;transform:translateY(20px);transition:.75s}.rv.on{opacity:1;transform:none}footer{padding:50px 0;border-top:1px solid #332a2328;font:10px ui-monospace;color:#7b7066;letter-spacing:.12em}
+@media(max-width:850px){.hero-grid,.classical,.fieldnote,.join-grid{grid-template-columns:1fr}.manuscript{min-height:430px}.folio{display:block}.sheet{margin:9px 0}.desk{grid-template-columns:1fr 1fr}.desk article{border-bottom:1px solid #18151255}.check{grid-template-columns:1fr 1fr}.archive{grid-template-columns:1fr 1fr}.vertical{writing-mode:horizontal-tb;justify-self:start;border-left:0;border-bottom:1px solid #a92f2a55;padding:0 0 15px}.sources{grid-template-columns:1fr}}
+@media(max-width:560px){.desk,.check,.archive{grid-template-columns:1fr}.docmeta{grid-template-columns:1fr 1fr}.hero h1{font-size:67px}.section{padding:78px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.cursor-note{display:none}}
+
+/* === MOBILE EXPERIENCE V7 / aligned to Design Department mobile rhythm === */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+@media (max-width: 760px){
+  :root{--mobile-pad:18px}
+  html{scroll-padding-top:64px}
+  body{font-size:15px}
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 36px)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+  nav{min-height:56px!important;height:56px!important;padding-left:0!important;padding-right:0!important}
+  nav .navin,.navin{width:calc(100% - 36px)!important;margin:auto!important;grid-template-columns:1fr auto!important;gap:10px!important}
+  .navlinks,.nav-links,.navmenu,.nav-menu{display:none!important}
+  .brand{font-size:12px!important;white-space:nowrap}
+  .brand small{font-size:6px!important;margin-left:5px!important}
+  .navstate,.nav-state{font-size:6px!important;letter-spacing:.08em!important;white-space:nowrap}
+  .hero{min-height:auto!important;padding-top:56px!important}
+  .hero-grid,.heroGrid,.hero-inner,.hero_inner{min-height:auto!important;grid-template-columns:1fr!important;display:grid!important}
+  .hero-copy{padding:54px 0 28px!important;min-width:0!important}
+  .hero h1{font-size:clamp(54px,18vw,82px)!important;line-height:.78!important;letter-spacing:-.065em!important;overflow-wrap:anywhere}
+  .hero h2{font-size:clamp(34px,11vw,54px)!important;line-height:.92!important}
+  .hero p,.hero-p,.hero-copy p{font-size:14px!important;line-height:1.75!important;max-width:100%!important}
+  .eyebrow,.kicker,.tag,.sys{font-size:7px!important;letter-spacing:.13em!important}
+  .meta,.chips{gap:5px!important}.meta span,.chips span{font-size:6px!important;padding:6px 7px!important}
+  .sec,section.sec{padding:72px 0!important}
+  .sec h2,section h2{font-size:clamp(38px,12vw,58px)!important;line-height:.96!important;letter-spacing:-.045em!important}
+  .lead{font-size:16px!important;line-height:1.75!important}
+  .big01,.big07,.indexbig,.index-big{font-size:92px!important;line-height:.72!important}
+  .cards,.services,.process,.diagnostic,.collab,.growth,.grid-cards,.card-grid{grid-template-columns:1fr!important;gap:8px!important}
+  .card,.service,.phase,.orgunit{min-height:0!important;padding:22px!important}
+  .card h3,.service h3,.phase h3,.orgunit h4{margin-top:34px!important}
+  .faq button{min-height:62px!important;padding:18px 0!important;font-size:15px!important;line-height:1.45!important;gap:14px!important}
+  .faq p{font-size:14px!important;line-height:1.75!important;padding-right:8px!important}
+  footer{padding-left:18px!important;padding-right:18px!important;line-height:1.7!important}
+  [style*="font-size:160px"],[style*="font-size:180px"],[style*="font-size:200px"]{font-size:88px!important}
+}
+@media (max-width: 390px){
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 28px)!important}
+  nav .navin,.navin{width:calc(100% - 28px)!important}
+  .hero h1{font-size:clamp(48px,17vw,68px)!important}
+  .sec h2,section h2{font-size:clamp(35px,11.5vw,49px)!important}
+  .lead{font-size:15px!important}
+}
+
+@media(max-width:760px){
+ .hero-grid,.heroGrid{grid-template-columns:1fr!important}.hero-art,.newspaper,.press-art{height:450px!important;min-height:450px!important}
+ .columns,.story-grid,.workflow,.desk-grid,.contact-sheet,.growth-grid{grid-template-columns:1fr!important}
+ .masthead{font-size:18vw!important}
+}
+</style>
+</head>
+<body style="padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)">
+<canvas id="paperfield"></canvas><div class="fiber"></div><div class="marginline"></div><div class="progress"></div><div class="cursor-note">EDITOR / FIELD NOTE</div>
+
+<header class="hero">
+<div class="wrap hero-grid">
+ <div>
+  <div class="docmeta"><span>KUN'GANG</span><span>EDITORIAL DESK</span><span>2026 / RECRUIT</span><span>稿号 KG-ED-001</span></div>
+  <div class="eyebrow" style="margin-top:30px">MANUSCRIPT SIGNAL / FIELD REPORT / ARCHIVE READY</div>
+  <h1>FIND<br>THE <i>STORY.</i></h1>
+  <p class="dek">福州大学昆冈众创工作室 · 采编部。<strong>我们不是把活动“写成推文”，而是去现场发现事实、人物与变化，再把真正值得留下的东西写清楚。</strong></p>
+ </div>
+ <div class="manuscript">
+  <div class="scribble">选题：昆冈众创工作室采编部招新<br>状态：二校 / 待核事实 / 待补现场<br>——<br>采访不是寻找一句“漂亮的话”。<br>报道也不是把流程重新念一遍。<br><br>真正的问题是：<br>谁改变了？什么发生了？<br>为什么值得被记住？</div>
+  <div class="line"></div>
+  <div class="scribble">FIELD → ASK → VERIFY → EDIT → PUBLISH → ARCHIVE</div>
+  <div class="mark m1">此处再追问一层。</div><div class="mark m2">删套话，补事实。</div><div class="seal">昆冈<br>采编</div>
+ </div>
+</div>
+</header>
+
+<main>
+<section class="section rv"><div class="wrap">
+<div class="num">01 / ABOUT KUN'GANG</div><h2>先认识昆冈，<br>再决定什么值得记录。</h2>
+<p class="lead">昆冈众创工作室长期围绕创新创业项目培育、赛事实践、课程与技术交流展开工作。对采编而言，这意味着我们面对的不是“宣传素材”，而是一群正在学习、试错、路演、研发、协作和成长的人。</p>
+<div class="pull">记录不是给事情镀金。<br><em>记录，是让后来的人仍能看见它真实发生过。</em></div>
+<div class="folio">
+ <article class="sheet s4"><b>PROJECT</b><h3>项目</h3><p>比“获得奖项”更值得追问的，是需求怎么被发现、技术怎样迭代、团队在哪一次反馈后改变方向。</p></article>
+ <article class="sheet s4"><b>PEOPLE</b><h3>人物</h3><p>负责人、成员、嘉宾、老师、新人。人的选择与变化，是理解一个创新共同体最直接的入口。</p></article>
+ <article class="sheet s4"><b>SCENE</b><h3>现场</h3><p>路演中的停顿、观众的追问、课程结束后的讨论——很多真正有信息量的内容不在PPT里。</p></article>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">02 / EDITORIAL IDENTITY</div><h2>采编部不是“写推文的人”。<br>我们负责发现：这件事到底值得讲什么。</h2>
+<p class="lead">活动与赛事宣传、赛事跟踪、赛后采访是工作形式。核心始终是：到现场、找事实、问人物、核信息、建结构，让没到场的人也能理解发生了什么，以及为什么值得记住。</p>
+<div class="classical">
+ <div class="vertical">采风 · 问事 · 秉笔 · 校雠 · 成文 · 藏稿</div>
+ <div>
+  <div class="craft-row"><b>采风 / FIELD</b><div><h3>先到现场</h3><p>文字开始之前，先观察。空间、动作、表情、声音、停顿和意外，都可能比流程表更接近故事。</p></div></div>
+  <div class="craft-row"><b>问事 / ASK</b><div><h3>把问题问到具体</h3><p>从“有什么感想”走向“哪一次判断后来被推翻”“哪个问题让你答不上来”。</p></div></div>
+  <div class="craft-row"><b>秉笔 / WRITE</b><div><h3>让事实自己有力量</h3><p>少一点套话，多一点证据、人物、场景和变化。写作不是拔高，而是组织真实。</p></div></div>
+  <div class="craft-row"><b>校雠 / VERIFY</b><div><h3>核到最后一个名字</h3><p>奖项、年份、项目名、数据、引语与技术描述，都应该能回到可靠来源。</p></div></div>
+  <div class="craft-row"><b>成文 / EDIT</b><div><h3>删掉不需要的句子</h3><p>结构、节奏、标题和开头都服务于理解。编辑不是把稿子写“华丽”，而是把重点变清楚。</p></div></div>
+  <div class="craft-row"><b>藏稿 / ARCHIVE</b><div><h3>让一次采访成为资产</h3><p>保存录音、照片、原始记录、来源与成稿，让今天的内容成为明天仍可查证的工作室记忆。</p></div></div>
+ </div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">03 / WHAT WE REPORT</div><h2>昆冈有很多故事。<br>我们决定从哪里切进去。</h2>
+<div class="folio">
+ <article class="sheet s7"><b>01 / PROJECT STORY</b><h3>项目故事</h3><p>不把项目压缩成一张“喜报”。需求、技术、用户、路演、专家反馈、团队争论和长期迭代，才构成完整故事。</p></article>
+ <article class="sheet s5"><b>02 / COMPETITION</b><h3>赛事现场</h3><p>准备、候场、答辩、追问、赛后复盘。比赛真正有价值的往往不是结果公布那一刻。</p></article>
+ <article class="sheet s4"><b>03 / TECH</b><h3>技术解释</h3><p>金课、开源、AI、企业技术交流，需要有人把术语重新问懂，再翻译给普通读者。</p></article>
+ <article class="sheet s4"><b>04 / PORTRAIT</b><h3>人物专访</h3><p>用一个人的选择、犹豫与成长，让读者看见项目背后的真实劳动。</p></article>
+ <article class="sheet s4"><b>05 / COMMUNITY</b><h3>昆冈日常</h3><p>工位、讨论、训练、团建、深夜改稿。一个组织的文化也藏在不那么宏大的瞬间里。</p></article>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">04 / SIX ANGLES</div><h2>同一场路演，<br>至少可以有六种写法。</h2>
+<div class="check">
+ <div><b>现场稿</b><h3>抓瞬间</h3><p>评委最尖锐的追问是什么？团队在哪一刻停顿？</p></div>
+ <div><b>人物稿</b><h3>跟一个人</h3><p>从准备到结束，观察一个项目成员的判断如何变化。</p></div>
+ <div><b>幕后稿</b><h3>看不见的工作</h3><p>一场活动如何被办公室、项目、设计、联络等协作完成。</p></div>
+ <div><b>解释稿</b><h3>回答“为什么”</h3><p>路演到底评什么？为什么一个项目需要反复讲？</p></div>
+ <div><b>复盘稿</b><h3>结果之后</h3><p>团队下一步真正准备改哪三件事，而不只是“再接再厉”。</p></div>
+ <div><b>影像稿</b><h3>让画面说话</h3><p>照片与短文字共同保存空间、动作、神态与现场温度。</p></div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">05 / THE EDITORIAL DESK</div><h2>一篇内容，<br>要经过六张桌子。</h2>
+<div class="desk">
+ <article><b>ASSIGN</b><h3>选题</h3><p>给谁看？为什么现在写？真正的问题是什么？</p></article>
+ <article><b>FIELD</b><h3>采集</h3><p>采访、观察、影像、数据与现场变化分开记录。</p></article>
+ <article><b>VERIFY</b><h3>核验</h3><p>名字、奖项、年份、数字和技术描述回到来源。</p></article>
+ <article><b>FRAME</b><h3>结构</h3><p>确定开头、重点、转折和哪些内容应该删掉。</p></article>
+ <article><b>EDIT</b><h3>编辑</h3><p>删套话、补证据、校语义，让稿件更准确也更有节奏。</p></article>
+ <article><b>ARCHIVE</b><h3>归档</h3><p>保存录音、照片、来源、成稿和可复用内容资产。</p></article>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">06 / INTERVIEW ROOM</div><h2>别从“获奖有什么感想”开始。</h2>
+<div class="interview"><div class="redpen">问具体，别替对方回答。</div>
+ <div class="q"><b>Q01</b><p>你们最早的项目版本是什么样？后来为什么推翻？</p></div>
+ <div class="q"><b>Q02</b><p>哪一次评委、老师或用户的追问最难回答？为什么？</p></div>
+ <div class="q"><b>Q03</b><p>如果不用任何专业术语，你会怎样解释技术真正解决的问题？</p></div>
+ <div class="q"><b>Q04</b><p>团队里哪一件最关键的工作最容易被外界忽略？</p></div>
+ <div class="q"><b>Q05</b><p>你现在最不同意三个月前自己的哪个判断？</p></div>
+ <div class="q"><b>Q06</b><p>如果没有这场比赛，你们还会继续做吗？</p></div>
+ <div class="q"><b>Q07</b><p>如果只能给下一届留一句真正有用的提醒，你会说什么？</p></div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">07 / FIELD NOTE</div><h2>你的第一次任务：<br>报道一场“看起来很普通”的金课。</h2>
+<div class="fieldnote">
+ <div class="notebook"><h3>记者手记 / NOTE 001</h3><p>不要从“为进一步提高……”开始。<br><br>试着寻找一个瞬间：<br>嘉宾停下来想了三秒；<br>后排同学第一次举手；<br>一个术语终于被讲懂；<br>下课后仍有人围着继续问。<br><br>故事经常从流程之外开始。</p></div>
+ <div class="timeline">
+  <div class="time"><b>T - 24H</b><h3>查背景</h3><p>查嘉宾、主题、技术背景和相关资料，写下三个普通同学真正可能会问的问题。</p></div>
+  <div class="time"><b>LIVE</b><h3>记现场</h3><p>不要只抄PPT。记录动作、反应、追问、笑声、停顿和那些没有出现在讲稿里的内容。</p></div>
+  <div class="time"><b>T + 10MIN</b><h3>补采访</h3><p>找一位听众：你来之前怎么理解这个问题？离开时有什么改变？</p></div>
+  <div class="time"><b>T + 3H</b><h3>搭结构</h3><p>先写最有信息量的一段，再决定背景放在哪里，而不是从活动全称开始。</p></div>
+  <div class="time"><b>BEFORE PUBLISH</b><h3>核事实</h3><p>人名、职务、课程名、技术概念、照片说明逐项确认。</p></div>
+ </div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">08 / FACT CHECK</div><h2>好内容首先要可信。<br>这是采编最朴素的底线。</h2>
+<div class="check">
+ <div><b>NAME</b><h3>名字</h3><p>老师、嘉宾、团队、项目全称必须准确。</p></div>
+ <div><b>AWARD</b><h3>赛事</h3><p>省赛、国赛、总决赛与奖项级别不能混写。</p></div>
+ <div><b>NUMBER</b><h3>数字</h3><p>项目数、参与人数、场次需要可靠来源。</p></div>
+ <div><b>QUOTE</b><h3>引用</h3><p>不能为了“更燃”擅自改变采访对象原意。</p></div>
+ <div><b>TECH</b><h3>技术</h3><p>没听懂就继续问，不用术语掩盖不理解。</p></div>
+ <div><b>IMAGE</b><h3>图片</h3><p>知道人物、时间、地点、活动，照片才真正成为档案。</p></div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">09 / CONTENT ASSET</div><h2>发布不是终点。<br>我们也在为昆冈保存记忆。</h2>
+<p class="lead">同一次采访不必只活在一篇公众号文章里。它可以成为人物长文、短视频脚本、项目案例卡、图片故事、未来招新材料，也可以在几年后帮助后来者重新理解一段历史。</p>
+<div class="archive">
+ <div><b>TEXT</b><h3>文字档案</h3><p>采访稿、现场笔记、成稿、标题版本与校对记录。</p></div>
+ <div><b>AUDIO</b><h3>声音档案</h3><p>经妥善管理的采访录音，让重要表达仍可追溯。</p></div>
+ <div><b>IMAGE</b><h3>影像档案</h3><p>照片不仅“好看”，还应拥有时间、地点、人物和事件信息。</p></div>
+ <div><b>SOURCE</b><h3>来源档案</h3><p>公开报道、赛事信息与原始数据，支撑未来继续核验。</p></div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">10 / COLLABORATE</div><h2>一篇好稿，<br>很少是一个人关门写出来的。</h2>
+<div class="folio">
+ <article class="sheet s6"><b>× DESIGN</b><h3>与设计部</h3><p>从选题阶段就判断需要哪些照片、图表、版式、视频或网页表达，而不是成稿后再“找张配图”。</p></article>
+ <article class="sheet s6"><b>× PROJECT</b><h3>与项目部</h3><p>理解项目背景、进度和关键节点，找到真正值得采访的人和问题。</p></article>
+ <article class="sheet s4"><b>× TALK</b><h3>与宣讲部</h3><p>共同拆解复杂赛事和技术内容，让传播准确又易懂。</p></article>
+ <article class="sheet s4"><b>× LIAISON</b><h3>与联络部</h3><p>外部嘉宾与合作活动提前获取准确背景和采访边界。</p></article>
+ <article class="sheet s4"><b>× OFFICE</b><h3>与办公室</h3><p>核对活动流程、组织信息、资料归档和发布节点。</p></article>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">11 / GROW WITH US</div><h2>从“会写”，<br>走向“会报道”。</h2>
+<div class="archive">
+ <div><b>OBSERVE</b><h3>看见</h3><p>从流程之外找到真正有信息量的细节。</p></div>
+ <div><b>ASK</b><h3>提问</h3><p>不怕暴露自己不懂，问到事情变清楚。</p></div>
+ <div><b>VERIFY</b><h3>核实</h3><p>建立事实意识、来源意识和编辑底线。</p></div>
+ <div><b>FRAME</b><h3>结构</h3><p>知道什么先说、什么后说、什么应该删。</p></div>
+ <div><b>LISTEN</b><h3>倾听</h3><p>采访不是抢话，而是让对方有空间把真正的故事讲出来。</p></div>
+ <div><b>WRITE</b><h3>表达</h3><p>用准确、克制、有节奏的文字建立自己的声音。</p></div>
+ <div><b>EDIT</b><h3>修改</h3><p>接受一篇稿件被反复推翻，并理解为什么这样改。</p></div>
+ <div><b>ARCHIVE</b><h3>留下</h3><p>让今天的报道成为几年后仍然可信、可用的记忆。</p></div>
+</div>
+</div></section>
+
+<section class="section join rv"><div class="wrap">
+<div class="num">12 / JOIN EDITORIAL</div><h2>COME WITH<br>CURIOSITY.</h2>
+<p class="lead">文笔当然重要，但我们更喜欢愿意去现场、愿意追问、对细节敏感，也尊重事实的人。</p>
+<div class="join-grid">
+ <div class="joinbox"><b>WE HOPE YOU ARE</b><h3>你可以带着这些来</h3><ul><li>对人物、项目和“为什么会这样”保持好奇。</li><li>愿意采访，也愿意在采访前做功课。</li><li>接受修改，甚至接受整段重写。</li><li>对名字、数字、引用和来源有一点“较真”。</li><li>愿意和设计、项目、宣讲等部门共同完成内容。</li></ul></div>
+ <div class="joinbox"><b>YOU DON'T NEED</b><h3>你不必已经是“成熟写作者”</h3><p>不会摄影不是硬门槛，没有采访经验也可以从旁听、共同采访和活动记录开始。采编真正训练的是观察、提问、核验、结构和表达——这些都可以在真实工作中长出来。</p></div>
+</div>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">13 / BEFORE YOU ASK</div><h2>加入之前，<br>你可能还想问。</h2>
+<div class="faq"><button><span>Q01　文笔不好可以报名吗？</span><b>＋</b></button><p>可以。采编更基础的能力是观察、提问、核验和结构，文字表达会在采访与改稿中持续成长。</p></div>
+<div class="faq"><button><span>Q02　一定要会摄影吗？</span><b>＋</b></button><p>不是硬门槛，但基础影像意识会让你更完整地理解现场记录。</p></div>
+<div class="faq"><button><span>Q03　采访会紧张怎么办？</span><b>＋</b></button><p>采访不是即兴表演。查资料、列问题、共同采访和认真倾听都能降低紧张。</p></div>
+<div class="faq"><button><span>Q04　可以写技术内容吗？</span><b>＋</b></button><p>可以。重点不是装作专家，而是把陌生概念真正问清楚、核清楚，再解释给读者。</p></div>
+<div class="faq"><button><span>Q05　稿子会被改很多吗？</span><b>＋</b></button><p>会，而且很正常。编辑是共同提高准确性、结构和可读性的过程。</p></div>
+<div class="faq"><button><span>Q06　采编和设计如何配合？</span><b>＋</b></button><p>最好从选题阶段就同步内容与视觉表达，而不是文字全部结束后再补图。</p></div>
+<div class="faq"><button><span>Q07　最重要的底线是什么？</span><b>＋</b></button><p>准确。人名、奖项、年份、项目名称、数字和引用都应该能回到可靠来源。</p></div>
+<div class="faq"><button><span>Q08　能做人物专访吗？</span><b>＋</b></button><p>有合适人物和选题时可以。项目团队、嘉宾、往届成员和新人都可能成为理解昆冈的一扇窗口。</p></div>
+<div class="faq"><button><span>Q09　除了公众号还能做什么？</span><b>＋</b></button><p>项目长文、赛事速报、现场手记、技术解释、图片故事、短视频脚本、人物卡片、案例库和口述史都可以成为内容形式。</p></div>
+<div class="faq"><button><span>Q10　什么样的人适合采编？</span><b>＋</b></button><p>好奇、愿意到现场、敢追问又尊重事实，对细节有感觉，也愿意把一篇稿子改到更清楚的人。</p></div>
+</div></section>
+
+<section class="coda rv"><div class="wrap">
+ <div class="poem">为天地立心，<br>为<i>现场</i>存真。</div>
+ <p>古人说“文章千古事”。对今天的采编而言，文章未必要宏大，但事实值得认真，人物值得被倾听，正在发生的成长值得留下可追溯的文字。</p>
+ <small>GO TO THE FIELD · ASK ONE MORE QUESTION · LEAVE THE TRUTH IN WORDS</small>
+</div></section>
+
+<section class="section rv"><div class="wrap">
+<div class="num">14 / PUBLIC BASIS</div><h2>内容依据</h2>
+<div class="sources">
+<a href="https://ccds.fzu.edu.cn/info/1161/11445.htm" target="_blank" rel="noopener"><span>福州大学计算机与大数据学院 · 科创育人公开总结</span><b>↗</b></a>
+<a href="https://ccds.fzu.edu.cn/info/1120/10779.htm" target="_blank" rel="noopener"><span>昆冈众创工作室 · 项目孵化与创新实践</span><b>↗</b></a>
+<a href="https://ccds.fzu.edu.cn/info/1120/9747.htm" target="_blank" rel="noopener"><span>昆冈相关课程、技术交流与实践材料</span><b>↗</b></a>
+<a href="https://ccds.fzu.edu.cn/info/1120/2066.htm" target="_blank" rel="noopener"><span>昆冈参与校园科创赛事的公开记录</span><b>↗</b></a>
+</div></div></section>
+</main>
+<footer><div class="wrap">KUN'GANG EDITORIAL DEPARTMENT / MANUSCRIPT No. KG-ED-001 / 采风 · 问事 · 秉笔 · 校雠 · 成文 · 藏稿</div></footer>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.querySelectorAll('.faq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+const prog=document.querySelector('.progress');
+addEventListener('scroll',()=>{let d=document.documentElement;prog.style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%'},{passive:true});
+const note=document.querySelector('.cursor-note');if(!reduce)addEventListener('pointermove',e=>{note.style.left=e.clientX+'px';note.style.top=e.clientY+'px'});else note.style.display='none';
+
+// Dynamic manuscript background: drifting fibers, ink washes and editorial strokes.
+const c=document.getElementById('paperfield'),ctx=c.getContext('2d');let W,H,D=Math.min(devicePixelRatio||1,2),fibers=[],washes=[];
+function resize(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';ctx.setTransform(D,0,0,D,0,0)}
+function seed(){fibers=Array.from({length:70},()=>({x:Math.random()*W,y:Math.random()*H,l:25+Math.random()*120,a:Math.random()*6.28,v:.02+Math.random()*.06,o:.025+Math.random()*.04}));washes=Array.from({length:6},()=>({x:Math.random()*W,y:Math.random()*H,r:100+Math.random()*250,p:Math.random()*6.28}))}
+function draw(t){ctx.clearRect(0,0,W,H);
+ for(const w of washes){let xx=w.x+Math.sin(t*.00008+w.p)*35,yy=w.y+Math.cos(t*.00007+w.p)*25,g=ctx.createRadialGradient(xx,yy,0,xx,yy,w.r);g.addColorStop(0,'rgba(55,44,34,.018)');g.addColorStop(.65,'rgba(55,44,34,.007)');g.addColorStop(1,'rgba(55,44,34,0)');ctx.fillStyle=g;ctx.beginPath();ctx.arc(xx,yy,w.r,0,Math.PI*2);ctx.fill()}
+ ctx.lineWidth=.5;for(const f of fibers){ctx.strokeStyle=`rgba(65,52,40,${f.o})`;ctx.beginPath();ctx.moveTo(f.x,f.y);ctx.lineTo(f.x+Math.cos(f.a)*f.l,f.y+Math.sin(f.a)*f.l);ctx.stroke();f.y-=f.v;if(f.y<-20)f.y=H+20}
+ if(!reduce)requestAnimationFrame(draw)}
+resize();seed();draw(0);addEventListener('resize',()=>{resize();seed()});
+</script>
+</body></html>

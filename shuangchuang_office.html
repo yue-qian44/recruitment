@@ -1,0 +1,192 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#e9e8e3">
+<title>昆冈众创｜办公室招新 · ORDER MAKES WORK FLOW</title>
+<style>
+:root{--ivory:#eeece6;--paper:#f8f7f2;--ink:#171a1d;--graphite:#555b60;--line:#b9b9b2;--navy:#19324b;--blue:#315b7c;--green:#667a6b;--orange:#b96c3d;--steel:#d6d7d3}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--ivory);font-family:Arial,"Microsoft YaHei",sans-serif;overflow-x:hidden}::selection{background:var(--navy);color:white}
+#draft{position:fixed;inset:0;width:100%;height:100%;z-index:-4;background:linear-gradient(105deg,#eceae4,#f4f2ec 48%,#e8e7e2)}
+.gridbg{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.35;background-image:linear-gradient(#26394b0b 1px,transparent 1px),linear-gradient(90deg,#26394b0b 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(100deg,#000,transparent 80%)}
+.progress{position:fixed;left:0;top:0;height:3px;width:0;background:var(--navy);z-index:100}.cursor{position:fixed;pointer-events:none;z-index:90;border:1px solid #19324b38;width:86px;height:86px;border-radius:50%;transform:translate(-50%,-50%)}.cursor:before,.cursor:after{content:"";position:absolute;background:#19324b55}.cursor:before{width:110px;height:1px;left:-12px;top:42px}.cursor:after{height:110px;width:1px;left:42px;top:-12px}
+.w{width:min(1260px,calc(100% - 42px));margin:auto}.mono,.label{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.label{font-size:10px;font-weight:800;letter-spacing:.15em;color:var(--blue)}
+.nav{position:fixed;top:22px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 40px));z-index:20;background:#f8f7f2dd;backdrop-filter:blur(14px);border:1px solid #171a1d25;padding:10px 13px;display:flex;justify-content:space-between;align-items:center;font:800 10px ui-monospace;letter-spacing:.1em}.nav span:last-child{color:var(--green)}
+.hero{min-height:100vh;display:grid;align-items:center;position:relative;overflow:hidden;padding-top:70px;isolation:isolate}
+.hero:after{content:"OFFICE";position:absolute;left:-.025em;bottom:-.19em;font-size:min(25vw,350px);font-weight:1000;letter-spacing:-.07em;color:rgba(25,50,75,.035);z-index:-2;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:50px;align-items:center;position:relative;z-index:2}
+.hero-grid>div:first-child{position:relative;z-index:4;padding:30px 34px 32px 0}
+.hero-grid>div:first-child:after{content:"";position:absolute;z-index:-1;left:-30px;right:-18px;top:-18px;bottom:-14px;background:linear-gradient(90deg,rgba(238,236,230,.97) 0%,rgba(238,236,230,.92) 72%,rgba(238,236,230,0) 100%);pointer-events:none}
+.hero h1{position:relative;z-index:3;font-size:clamp(70px,11.4vw,155px);line-height:.75;letter-spacing:-.075em;margin:27px 0;color:#171a1d;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+.hero h1 span{color:var(--navy)}
+.hero p{position:relative;z-index:4;max-width:760px;font-size:20px;line-height:1.8;color:#454c51;font-weight:500}
+.hero p b{color:#111518;font-weight:800}
+.hero .label{position:relative;z-index:4;color:#315b7c}
+.workspace{z-index:3}
+.workspace{height:610px;position:relative;perspective:1100px}.deskboard{position:absolute;inset:80px 20px 40px 35px;background:#d4c8b3;border:1px solid #7b7468;transform:rotateX(55deg) rotateZ(-5deg);box-shadow:25px 35px 60px #4c443426;transform-style:preserve-3d}.monitor{position:absolute;left:32%;top:19%;width:38%;height:30%;background:#1d252c;border:9px solid #333a3f;box-shadow:0 13px 0 #555d61}.monitor:before{content:"09:30  /  WEEKLY OPS";position:absolute;inset:16px;color:#d7e5e7;font:800 9px ui-monospace;border-top:1px solid #8aa4aa;padding-top:13px}.monitor:after{content:"TASKS  08   DONE  05";position:absolute;left:16px;bottom:15px;color:#8fb09a;font:800 8px ui-monospace}.keyboard{position:absolute;left:30%;top:54%;width:42%;height:10%;border:1px solid #4e4c46;background:repeating-linear-gradient(90deg,#eee 0 12px,#bbb 13px 14px);transform:skew(-9deg)}.folder{position:absolute;right:8%;top:25%;width:17%;height:29%;background:#233f57;color:white;padding:13px;font:800 8px ui-monospace;transform:rotate(5deg);box-shadow:7px 8px 0 #ad6a43}.notepad{position:absolute;left:7%;bottom:12%;width:20%;height:30%;background:#f4f0df;border:1px solid #8f8a7e;transform:rotate(-8deg);padding:13px;font:700 8px ui-monospace;line-height:2}.lamp{position:absolute;right:4%;bottom:5%;width:90px;height:90px;border:10px solid #35454a;border-radius:50%;box-shadow:0 0 50px #fff4d455}.mug{position:absolute;left:13%;top:18%;width:58px;height:58px;border:8px solid #65766a;border-radius:50%;box-shadow:inset 0 0 0 2px #f8f7f2}.tagpin{position:absolute;background:var(--orange);color:white;padding:8px 10px;font:900 9px ui-monospace;box-shadow:4px 4px 0 #171a1d}.tp1{right:1%;top:9%;transform:rotate(4deg)}.tp2{left:2%;top:7%;background:var(--navy);transform:rotate(-4deg)}
+.sec{padding:105px 0;border-top:1px solid #171a1d24;position:relative}.sec.dark{background:#182129;color:#f2f1ec}.sec.blue{background:#1d3a52;color:white}.sec h2{font-size:clamp(42px,6vw,78px);line-height:.96;letter-spacing:-.055em;margin:17px 0 27px}.lead{max-width:920px;font-size:20px;line-height:1.8;color:#5b6064}.dark .lead,.blue .lead{color:#b9c2c7}
+.officeplan{display:grid;grid-template-columns:repeat(12,1fr);gap:9px;margin-top:44px}.dept{background:#faf9f5;border:1px solid #1b202530;padding:27px;min-height:260px;position:relative;transition:.3s;overflow:hidden}.dept:hover{transform:translateY(-5px);box-shadow:8px 8px 0 #19324b}.dept:before{content:attr(data-id);position:absolute;right:16px;top:14px;font:900 10px ui-monospace;color:#7c8589}.dept b{font:800 10px ui-monospace;color:var(--blue)}.dept h3{font-size:28px;margin-top:70px}.dept p{color:#60666b;line-height:1.75}.d4{grid-column:span 4}.d6{grid-column:span 6}
+.load{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:42px}.file{min-height:245px;border:1px solid #ffffff25;padding:23px;position:relative;background:#ffffff08;transition:.3s}.file:hover{background:#ffffff10;transform:translateY(-5px)}.file:before{content:"▰";color:#90aa97}.file b{font:800 10px ui-monospace;color:#a8c0cf;margin-left:8px}.file h3{margin-top:62px;font-size:24px}.file p{color:#b7c0c5;line-height:1.7}
+.calendar{margin-top:45px;background:#f7f6f1;color:#171a1d;border:1px solid #0e151a;box-shadow:13px 13px 0 #71816f;display:grid;grid-template-columns:190px 1fr}.cal-side{background:#1d3a52;color:white;padding:25px}.cal-side b{font:800 10px ui-monospace;color:#cbd9c6}.cal-side h3{font-size:34px;margin-top:60px}.cal-main{padding:25px}.run{display:grid;grid-template-columns:110px 1fr 110px;gap:20px;padding:18px 0;border-bottom:1px solid #1b20252c;align-items:center}.run code{font-weight:900;color:var(--blue)}.run strong{font-size:16px}.status{font:800 9px ui-monospace;border:1px solid #667a6b;padding:7px;text-align:center;color:#536b59}
+.station{display:grid;grid-template-columns:.75fr 1.25fr;gap:35px;margin-top:45px}.station-map{background:#e1e0da;border:1px solid #111;padding:20px;position:relative;min-height:460px}.station-map:before{content:"WORKSTATION / TOP VIEW";font:900 9px ui-monospace;color:#19324b}.tabletop{position:absolute;inset:75px 35px 45px;background:#c8bda9;border:1px solid #756e63}.obj{position:absolute;border:1px solid #171a1d;background:#f4f2eb;font:800 8px ui-monospace;display:grid;place-items:center;color:#3c464d}.o1{left:35%;top:12%;width:32%;height:25%;background:#303b42;color:white}.o2{left:31%;bottom:14%;width:40%;height:12%}.o3{right:6%;top:14%;width:18%;height:32%;background:#203e57;color:white}.o4{left:5%;bottom:10%;width:20%;height:28%;background:#f2ead2}.o5{left:7%;top:9%;width:58px;height:58px;border-radius:50%;background:#65766a;color:white}.station-notes{display:grid;gap:8px}.station-notes article{border-top:1px solid #1b20254d;padding:18px 0;display:grid;grid-template-columns:90px 1fr;gap:15px}.station-notes b{font:800 10px ui-monospace;color:var(--blue)}.station-notes h3{margin:0 0 7px;font-size:24px}.station-notes p{margin:0;color:#62676c;line-height:1.7}
+.scenario{margin-top:42px;border:1px solid #ffffff28}.scenario-row{display:grid;grid-template-columns:180px 1fr 130px;gap:20px;padding:22px;border-bottom:1px solid #ffffff20}.scenario-row:last-child{border:0}.scenario-row b{color:#a9c0cf;font:800 10px ui-monospace}.scenario-row p{margin:0;color:#c0c8cc;line-height:1.7}.scenario-row span{font:800 9px ui-monospace;color:#bcd0c0}
+.incidents{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:40px}.incident{border:1px solid #1b202530;background:#faf9f5;padding:25px;min-height:245px;position:relative}.incident b{font:900 10px ui-monospace;color:var(--orange)}.incident h3{font-size:26px;margin-top:60px}.incident p{color:#60666b;line-height:1.75}.incident.fix{background:#19324b;color:white}.incident.fix p,.incident.fix b{color:#c7d6d2}
+.week{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:40px}.day{min-height:280px;border:1px solid #ffffff25;padding:21px;position:relative}.day b{font:900 10px ui-monospace;color:#c8d8ca}.day h3{font-size:25px;margin-top:70px}.day p{color:#bdc6ca;line-height:1.7}.day.event{background:#f1eee5;color:#171a1d}.day.event p{color:#565d61}.day.event b{color:var(--orange)}
+.handoff{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:40px}.handoff article{min-height:225px;border:1px solid #1b202530;padding:23px;background:#faf9f5}.handoff b{font:800 10px ui-monospace;color:var(--green)}.handoff h3{margin-top:55px}.handoff p{color:#60666b;line-height:1.7}
+.archive{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;margin-top:42px}.cabinet{background:#747c7d;padding:18px;border:1px solid #31393b;display:grid;grid-template-columns:1fr 1fr;gap:8px}.drawer{height:120px;background:#d9d8d2;border:1px solid #4d5354;box-shadow:inset 0 -5px 0 #bbbdb9;display:grid;place-items:center;font:800 9px ui-monospace;color:#43494b;position:relative}.drawer:before{content:"";position:absolute;top:17px;width:40px;height:8px;border:1px solid #555}.archive-list div{padding:18px 0;border-bottom:1px solid #ffffff22;display:grid;grid-template-columns:110px 1fr;gap:15px}.archive-list b{font:800 10px ui-monospace;color:#b8c9bd}.archive-list p{margin:0;color:#bdc5ca;line-height:1.7}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:40px}.skill{min-height:220px;border:1px solid #1b202530;background:#faf9f5;padding:24px}.skill b{font:800 10px ui-monospace;color:var(--blue)}.skill h3{margin-top:52px}.skill p{color:#60666b;line-height:1.7}
+.join{background:#d9d7cf}.join h2{font-size:clamp(60px,10vw,135px);line-height:.78}.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:42px}.joinbox{background:#f8f7f2;border:1px solid #171a1d;padding:30px;min-height:310px;box-shadow:9px 9px 0 #19324b}.joinbox h3{font-size:28px}.joinbox li,.joinbox p{color:#555c61;line-height:1.8}
+.faq{border-bottom:1px solid #1b202533}.faq button{width:100%;border:0;background:none;padding:23px 0;display:flex;justify-content:space-between;text-align:left;font-size:18px;cursor:pointer;color:var(--ink)}.faq button b{color:var(--blue);transition:.3s}.faq p{display:none;max-width:900px;color:#5c6267;line-height:1.8;padding:0 0 23px;margin:0}.faq.open p{display:block}.faq.open button b{transform:rotate(45deg)}
+.coda{min-height:90vh;display:grid;place-items:center;text-align:center;background:#19324b;color:white;position:relative;overflow:hidden}.coda:before{content:"序";position:absolute;font-family:"STSong","Songti SC",serif;font-size:min(57vw,720px);color:#ffffff035}.stamp{position:relative;display:inline-block;border:3px double #d9e2db;padding:10px 15px;font:900 10px ui-monospace;letter-spacing:.14em;transform:rotate(-3deg)}.coda h2{position:relative;font-family:"STKaiti","KaiTi",serif;font-size:clamp(52px,8vw,108px);line-height:1.2;margin:35px 0 20px}.coda p{position:relative;max-width:760px;margin:auto;color:#becbd0;line-height:1.9}.coda small{position:relative;display:block;margin-top:30px;font:800 10px ui-monospace;color:#b9c9bc;letter-spacing:.3em}
+.sources{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sources a{display:flex;justify-content:space-between;text-decoration:none;color:#555d62;border-bottom:1px solid #171a1d25;padding:13px 0;font-size:13px}.rv{opacity:0;transform:translateY(20px);transition:.75s}.rv.on{opacity:1;transform:none}footer{padding:55px 0;background:#171d21;color:#8f999e;font:10px ui-monospace;letter-spacing:.12em}
+@media(max-width:880px){.hero-grid,.station,.archive,.join-grid{grid-template-columns:1fr}.workspace{height:500px}.load{grid-template-columns:1fr 1fr}.week{grid-template-columns:1fr 1fr}.handoff,.skills,.incidents{grid-template-columns:1fr 1fr}.officeplan{display:block}.dept{margin:8px 0}.calendar{grid-template-columns:1fr}.run{grid-template-columns:90px 1fr}.run .status{grid-column:2}.scenario-row{grid-template-columns:120px 1fr}.scenario-row span{grid-column:2}}
+@media(max-width:560px){.load,.week,.handoff,.skills,.incidents{grid-template-columns:1fr}.hero h1{font-size:66px;line-height:.82}.hero-grid>div:first-child{padding:24px 12px}.hero-grid>div:first-child:after{left:-12px;right:-12px;top:-12px;bottom:-12px;background:rgba(238,236,230,.94);border:1px solid rgba(25,50,75,.08)}.hero p{font-size:17px;line-height:1.75}.hero:after{opacity:.45}.sec{padding:78px 0}.workspace{height:420px}.nav span:last-child{display:none}.cursor{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.cursor{display:none}}
+
+/* === MOBILE EXPERIENCE V7 / aligned to Design Department mobile rhythm === */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+@media (max-width: 760px){
+  :root{--mobile-pad:18px}
+  html{scroll-padding-top:64px}
+  body{font-size:15px}
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 36px)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+  nav{min-height:56px!important;height:56px!important;padding-left:0!important;padding-right:0!important}
+  nav .navin,.navin{width:calc(100% - 36px)!important;margin:auto!important;grid-template-columns:1fr auto!important;gap:10px!important}
+  .navlinks,.nav-links,.navmenu,.nav-menu{display:none!important}
+  .brand{font-size:12px!important;white-space:nowrap}
+  .brand small{font-size:6px!important;margin-left:5px!important}
+  .navstate,.nav-state{font-size:6px!important;letter-spacing:.08em!important;white-space:nowrap}
+  .hero{min-height:auto!important;padding-top:56px!important}
+  .hero-grid,.heroGrid,.hero-inner,.hero_inner{min-height:auto!important;grid-template-columns:1fr!important;display:grid!important}
+  .hero-copy{padding:54px 0 28px!important;min-width:0!important}
+  .hero h1{font-size:clamp(54px,18vw,82px)!important;line-height:.78!important;letter-spacing:-.065em!important;overflow-wrap:anywhere}
+  .hero h2{font-size:clamp(34px,11vw,54px)!important;line-height:.92!important}
+  .hero p,.hero-p,.hero-copy p{font-size:14px!important;line-height:1.75!important;max-width:100%!important}
+  .eyebrow,.kicker,.tag,.sys{font-size:7px!important;letter-spacing:.13em!important}
+  .meta,.chips{gap:5px!important}.meta span,.chips span{font-size:6px!important;padding:6px 7px!important}
+  .sec,section.sec{padding:72px 0!important}
+  .sec h2,section h2{font-size:clamp(38px,12vw,58px)!important;line-height:.96!important;letter-spacing:-.045em!important}
+  .lead{font-size:16px!important;line-height:1.75!important}
+  .big01,.big07,.indexbig,.index-big{font-size:92px!important;line-height:.72!important}
+  .cards,.services,.process,.diagnostic,.collab,.growth,.grid-cards,.card-grid{grid-template-columns:1fr!important;gap:8px!important}
+  .card,.service,.phase,.orgunit{min-height:0!important;padding:22px!important}
+  .card h3,.service h3,.phase h3,.orgunit h4{margin-top:34px!important}
+  .faq button{min-height:62px!important;padding:18px 0!important;font-size:15px!important;line-height:1.45!important;gap:14px!important}
+  .faq p{font-size:14px!important;line-height:1.75!important;padding-right:8px!important}
+  footer{padding-left:18px!important;padding-right:18px!important;line-height:1.7!important}
+  [style*="font-size:160px"],[style*="font-size:180px"],[style*="font-size:200px"]{font-size:88px!important}
+}
+@media (max-width: 390px){
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 28px)!important}
+  nav .navin,.navin{width:calc(100% - 28px)!important}
+  .hero h1{font-size:clamp(48px,17vw,68px)!important}
+  .sec h2,section h2{font-size:clamp(35px,11.5vw,49px)!important}
+  .lead{font-size:15px!important}
+}
+
+@media(max-width:760px){
+ .hero-grid{grid-template-columns:1fr!important}.hero-copy{position:relative!important;z-index:5!important}
+ .hero-copy:before{content:"";position:absolute;inset:25px -10px 5px -10px;background:rgba(238,236,230,.92);z-index:-1;border:1px solid rgba(25,50,75,.10)}
+ .hero:after{font-size:38vw!important;opacity:.45!important;right:-8vw!important}
+ .desk,.hero-art,.workspace{height:390px!important;min-height:390px!important}
+ .runbook,.week,.collab,.archive-grid,.skills{grid-template-columns:1fr!important}
+}
+</style></head><body style="padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)">
+<canvas id="draft"></canvas><div class="gridbg"></div><div class="progress"></div><div class="cursor"></div>
+<nav class="nav"><span>KUN'GANG / OFFICE OPERATIONS</span><span>ORDER · RELIABILITY · MEMORY</span></nav>
+
+<header class="hero"><div class="w hero-grid"><div><div class="label">WORKSPACE SYSTEM / DOCUMENT CONTROL / OPERATIONS DESK</div><h1>MAKE<br><span>ORDER</span><br>WORK.</h1><p>福州大学昆冈众创工作室 · 办公室。<b>真正稳定的组织感，往往藏在别人看不见的细节里。</b>我们把口头需求变成清晰任务，把临时变化变成可靠同步，把一次活动变成可复用的组织记忆。</p></div>
+<div class="workspace" aria-hidden="true"><div class="deskboard"><div class="monitor"></div><div class="keyboard"></div><div class="folder">OPS / 2026<br><br>MEETING<br>FINANCE<br>ARCHIVE</div><div class="notepad">TODAY<br>□ venue<br>□ roster<br>□ invoice<br>□ minutes<br>□ archive</div><div class="lamp"></div><div class="mug"></div></div><div class="tagpin tp1">DESK 07 / ACTIVE</div><div class="tagpin tp2">09:30 / ALL SYSTEMS READY</div></div></div></header>
+
+<main>
+<section class="sec rv"><div class="w"><div class="label">01 / OFFICE AS AN OPERATING SYSTEM</div><h2>办公室不是“杂事中心”。<br>它是工作室的<span style="color:var(--navy)">运行底盘。</span></h2><p class="lead">一个组织越忙，越需要有人看见那些不会自动发生的事情：通知有没有确认、场地有没有锁定、文件是不是最终版、票据是否齐全、会议结论有没有负责人、活动结束后经验有没有留下。</p>
+<div class="officeplan"><article class="dept d4" data-id="01"><b>ADMIN</b><h3>文秘行政</h3><p>通知、会议、文档、信息汇总。让决定和任务不只停留在聊天记录里。</p></article><article class="dept d4" data-id="02"><b>LOGISTICS</b><h3>后勤保障</h3><p>场地、设备、物资、签到和现场支持，让专业部门把注意力放回内容本身。</p></article><article class="dept d4" data-id="03"><b>PEOPLE</b><h3>组织人事</h3><p>成员、部门、届次、分工和任务接口需要清晰维护。</p></article><article class="dept d4" data-id="04"><b>FINANCE</b><h3>财务报账</h3><p>预算、票据、材料和节点规范，帮助活动真正完成闭环。</p></article><article class="dept d4" data-id="05"><b>MEETING</b><h3>会务筹备</h3><p>议程、名单、座位、设备、主持和应急联系人，在开始之前减少不确定性。</p></article><article class="dept d4" data-id="06"><b>ARCHIVE</b><h3>资料归档</h3><p>源文件、方案、名单、总结和复盘，是组织跨届传承的基础设施。</p></article></div></div></section>
+
+<section class="sec dark rv"><div class="w"><div class="label" style="color:#b9cbbc">02 / WHAT RUNS BEHIND THE SCENE</div><h2>台前看到一场活动。<br>办公室看到<span style="color:#c5d7ca">几十个依赖项。</span></h2><p class="lead">项目路演、训练营、第二课堂金课、校企活动、学生社区、项目培育、招新与日常建设，背后都需要人员、空间、材料、时间和信息在同一个节点汇合。</p><div class="load">
+<article class="file"><b>PROJECT ROADSHOW</b><h3>项目路演</h3><p>团队、评委、材料、会场、流程和通知同时到位。</p></article><article class="file"><b>TRAINING</b><h3>赛事训练营</h3><p>多轮训练意味着名单、场次、材料和反馈持续变化。</p></article><article class="file"><b>COURSE</b><h3>第二课堂金课</h3><p>嘉宾、场地、听众、设备、签到和现场执行共同组成后台。</p></article><article class="file"><b>PARTNERSHIP</b><h3>校企活动</h3><p>外部嘉宾进入校园后，需要更准确的时间、空间与接口管理。</p></article><article class="file"><b>COMMUNITY</b><h3>学生社区</h3><p>组织运行不只发生在大型活动，日常空间同样需要秩序。</p></article><article class="file"><b>INCUBATION</b><h3>项目培育</h3><p>规模越大，越依赖结构化信息和稳定流程。</p></article><article class="file"><b>ONBOARDING</b><h3>招新与建设</h3><p>新成员进入后，信息、分组、培训和文化需要有人承接。</p></article><article class="file"><b>DAILY OPS</b><h3>团建与日常</h3><p>成员体验、内部沟通和小型事项，也是组织稳定的一部分。</p></article>
+</div></div></section>
+
+<section class="sec rv"><div class="w"><div class="label">03 / DESK AESTHETICS</div><h2>工位不是摆拍。<br>每件东西都有自己的<span style="color:var(--green)">位置与作用。</span></h2><div class="station"><div class="station-map"><div class="tabletop"><div class="obj o1">MONITOR<br>STATUS</div><div class="obj o2">KEYBOARD / INPUT</div><div class="obj o3">FILE<br>TRAY</div><div class="obj o4">NOTES<br>+ CHECKLIST</div><div class="obj o5">COFFEE</div></div></div><div class="station-notes">
+<article><b>SCREEN</b><div><h3>屏幕：正在发生什么</h3><p>日程、名单、状态与待办，让重要信息不靠脑内记忆。</p></div></article>
+<article><b>INBOX</b><div><h3>文件盘：什么等待处理</h3><p>待确认、待签字、待归档各有位置，减少“我记得放过这里”的混乱。</p></div></article>
+<article><b>NOTES</b><div><h3>便签：今天最重要的三件事</h3><p>不是把所有任务都贴满桌面，而是让优先级可见。</p></div></article>
+<article><b>EMPTY</b><div><h3>留白：秩序的一部分</h3><p>好的工位不追求堆满工具。空出来的空间意味着下一件事有地方发生。</p></div></article>
+</div></div></div></section>
+
+<section class="sec blue rv"><div class="w"><div class="label" style="color:#c8d7ce">04 / RUNBOOK</div><h2>两周后有一场大型路演。<br>办公室如何让它<span style="color:#dbe6dc">稳定发生？</span></h2><div class="calendar"><aside class="cal-side"><b>CALENDAR / EVENT</b><h3>ROADSHOW<br>14 DAYS</h3><p style="color:#c0ccd2;line-height:1.7">会议室 A<br>预计 8 支团队<br>评委 / 嘉宾待确认<br><br>OWNER<br>OFFICE OPS</p></aside><div class="cal-main">
+<div class="run"><code>T-14D</code><strong>确认目标、日期、场地、团队、评委与责任人</strong><span class="status">INIT</span></div><div class="run"><code>T-10D</code><strong>建立名单和材料表，统一命名与版本</strong><span class="status">DATA</span></div><div class="run"><code>T-7D</code><strong>议程、座位、设备、物资、签到、主持与应急接口</strong><span class="status">PLAN</span></div><div class="run"><code>T-3D</code><strong>逐项确认，不把“应该可以”当成“已经确认”</strong><span class="status">CHECK</span></div><div class="run"><code>T-1D</code><strong>会场走查，最终流程同步到所有关键人员</strong><span class="status">VERIFY</span></div><div class="run"><code>T-0</code><strong>记录现场变化，把问题送到真正能解决它的人</strong><span class="status">LIVE</span></div><div class="run"><code>T+1D</code><strong>票据、名单、材料、总结与遗留事项归档</strong><span class="status">CLOSE</span></div>
+</div></div></div></section>
+
+<section class="sec dark rv"><div class="w"><div class="label" style="color:#b9cbbc">05 / FIRST TASK</div><h2>“明天下午要开个会。”<br>你会先问什么？</h2><div class="scenario">
+<div class="scenario-row"><b>01 / PURPOSE</b><p>会议目的是什么？需要做决定、解决问题，还是只同步信息？</p><span>DEFINE</span></div>
+<div class="scenario-row"><b>02 / PEOPLE</b><p>谁必须参加？谁只需要知情？有没有外部嘉宾？</p><span>ROSTER</span></div>
+<div class="scenario-row"><b>03 / TIME</b><p>什么时候开始、预计多久、与参会人的其他安排是否冲突？</p><span>SCHEDULE</span></div>
+<div class="scenario-row"><b>04 / MATERIAL</b><p>有没有材料需要提前阅读？谁准备？最终版什么时候锁定？</p><span>PREP</span></div>
+<div class="scenario-row"><b>05 / ROOM</b><p>地点、投屏、网络、座位、白板和远程会议是否需要？</p><span>SPACE</span></div>
+<div class="scenario-row"><b>06 / AFTER</b><p>谁记录？决定了什么？谁负责下一步？什么时候完成？</p><span>CLOSE</span></div>
+</div></div></section>
+
+<section class="sec rv"><div class="w"><div class="label">06 / OFFICE INCIDENT LOG</div><h2>后台最常见的事故，<br>通常都不是“大事故”。</h2><p class="lead">真正麻烦的是那些很小、却会沿着协作链不断放大的问题。办公室的专业性，就是尽量让它们在爆发之前被看见。</p><div class="incidents">
+<article class="incident"><b>ERROR 01</b><h3>只在群里说过</h3><p>信息发出不等于收到，更不等于理解和确认。</p></article><article class="incident"><b>ERROR 02</b><h3>没有最终版</h3><p>名单、PPT、流程同时出现多个版本，现场总有人拿错。</p></article><article class="incident"><b>ERROR 03</b><h3>没有明确负责人</h3><p>“大家注意一下”经常意味着没有人真正负责。</p></article><article class="incident"><b>ERROR 04</b><h3>活动结束即删除</h3><p>没有归档，下一届就只能重新踩一次相同的坑。</p></article><article class="incident"><b>ERROR 05</b><h3>变化没有同步</h3><p>时间、场地、人员只通知一部分人，小变化会迅速放大。</p></article><article class="incident fix"><b>CONTROL SYSTEM</b><h3>机制比记性可靠</h3><p>清单、确认、版本、负责人、截止时间、记录与复盘，是办公室真正的工具箱。</p></article>
+</div></div></section>
+
+<section class="sec dark rv"><div class="w"><div class="label" style="color:#b9cbbc">07 / A WEEK IN OFFICE</div><h2>办公室的一周，<br>不是每天都一样。</h2><div class="week">
+<article class="day"><b>MON / 09:00</b><h3>信息盘点</h3><p>整理本周节点、待确认事项和跨部门需求。</p></article><article class="day"><b>TUE / 16:30</b><h3>名单与文档</h3><p>更新人员、材料版本与需要催办的任务。</p></article><article class="day"><b>WED / 14:00</b><h3>会务准备</h3><p>场地、物资、人员、设备和流程逐项确认。</p></article><article class="day"><b>FRI / 18:00</b><h3>财务与归档</h3><p>补齐票据、文件与记录，把完成的事情真正关闭。</p></article><article class="day event"><b>EVENT DAY</b><h3>现场运行</h3><p>最重要的不是“看起来很忙”，而是发现异常并快速协调。</p></article>
+</div></div></section>
+
+<section class="sec rv"><div class="w"><div class="label">08 / CROSS-DEPARTMENT DESK</div><h2>办公室拥有一种特殊视角：<br>看见七个部门如何<span style="color:var(--navy)">一起运转。</span></h2><div class="handoff">
+<article><b>× INCUBATION</b><h3>孵化部</h3><p>课程、训练营与项目培育需要报名、会务、材料和空间支持。</p></article><article><b>× PROJECT</b><h3>项目部</h3><p>团队与评委信息、场地安排、会议节点共同维护。</p></article><article><b>× EDITORIAL</b><h3>采编部</h3><p>活动信息与最终口径准确，内容生产才能减少返工。</p></article><article><b>× DESIGN</b><h3>设计部</h3><p>物料尺寸、输出时间、现场屏幕和印刷需求提前确认。</p></article><article><b>× SCI-TALK</b><h3>宣讲部</h3><p>嘉宾、教室、设备、报名和签到都需要后台支持。</p></article><article><b>× LIAISON</b><h3>联络部</h3><p>外部合作确定后，把沟通结果转化为真正可执行的安排。</p></article>
+</div></div></section>
+
+<section class="sec dark rv"><div class="w"><div class="label" style="color:#b9cbbc">09 / ARCHIVE ROOM</div><h2>组织记忆，<br>应该有自己的<span style="color:#c6d5ca">抽屉。</span></h2><div class="archive"><div class="cabinet"><div class="drawer">MEETING<br>MINUTES</div><div class="drawer">ROSTER<br>PEOPLE</div><div class="drawer">FINANCE<br>RECEIPTS</div><div class="drawer">EVENT<br>FILES</div><div class="drawer">DESIGN<br>SOURCE</div><div class="drawer">REVIEW<br>LESSONS</div></div><div class="archive-list">
+<div><b>01 / NAME</b><p>统一命名，让任何人看到文件就知道时间、活动、内容与版本。</p></div><div><b>02 / VERSION</b><p>区分草稿、待确认、最终版，避免“final_final_真的最终版”。</p></div><div><b>03 / SOURCE</b><p>保留源文件、名单、流程、票据和必要上下文。</p></div><div><b>04 / ACCESS</b><p>知道谁需要使用、谁负责维护，也尊重不该公开的信息边界。</p></div><div><b>05 / REVIEW</b><p>把问题和解决方式一起留下，让后来者不用从零开始。</p></div>
+</div></div></div></section>
+
+<section class="sec rv"><div class="w"><div class="label">10 / INVISIBLE SKILLS</div><h2>办公室训练的，<br>是一组很难写在海报上的能力。</h2><div class="skills">
+<article class="skill"><b>STRUCTURE</b><h3>信息结构化</h3><p>把混乱聊天整理成谁、什么、何时、在哪里和下一步。</p></article><article class="skill"><b>RELIABILITY</b><h3>可靠沟通</h3><p>重要事项有确认，变化有同步，问题不拖到最后。</p></article><article class="skill"><b>OVERVIEW</b><h3>全局视角</h3><p>理解不同部门的接口，而不是只看见自己的任务。</p></article><article class="skill"><b>RISK</b><h3>风险意识</h3><p>在事情出问题之前发现依赖项和缺口。</p></article><article class="skill"><b>MEMORY</b><h3>组织记忆</h3><p>让经验能跨项目、跨部门、跨届继续复用。</p></article><article class="skill"><b>CALM</b><h3>稳定性</h3><p>忙的时候仍能清楚、礼貌、按节点把事情推进。</p></article>
+</div></div></section>
+
+<section class="sec join rv"><div class="w"><div class="label">11 / JOIN OFFICE</div><h2>KEEP THINGS<br>IN ORDER.</h2><p class="lead">如果你看到混乱会本能地想把它整理清楚；如果你不介意做幕后，却希望自己的工作让所有人更顺畅——这里会让你逐渐成为一个团队很愿意依赖的人。</p><div class="join-grid"><article class="joinbox"><h3>我们希望你带来的</h3><ul><li>对答应过的事情有责任感。</li><li>愿意确认，而不是习惯“应该没问题”。</li><li>看到混乱时愿意动手整理。</li><li>面对临时变化能保持沟通。</li><li>愿意做那些不一定显眼、但很重要的事情。</li></ul></article><article class="joinbox"><h3>你不需要提前精通的</h3><p>不会 Excel、没写过会议纪要、不熟悉报账流程，都可以慢慢学习。办公室真正重要的不是背模板，而是理解为什么要记录、为什么要确认、为什么要留版本，以及怎样让别人放心地与你协作。</p></article></div></div></section>
+
+<section class="sec rv"><div class="w"><div class="label">12 / FAQ</div><h2>关于办公室，<br>你可能还想确认。</h2>
+<div class="faq"><button><span>Q01　办公室是不是每天都在填表？</span><b>＋</b></button><p>表格只是工具。真正处理的是信息、人员、会务、后勤、财务和组织协作。</p></div>
+<div class="faq"><button><span>Q02　需要特别细心吗？</span><b>＋</b></button><p>细心重要，但比“永远不出错”更重要的是建立检查机制、及时沟通和快速补救。</p></div>
+<div class="faq"><button><span>Q03　不会 Excel 或文书怎么办？</span><b>＋</b></button><p>可以学。重点是理解工具为什么存在，以及怎样让信息更清楚。</p></div>
+<div class="faq"><button><span>Q04　会参与大型活动吗？</span><b>＋</b></button><p>赛事、路演、会议、招新和内部活动等都可能需要办公室提供会务与后勤支持。</p></div>
+<div class="faq"><button><span>Q05　工作是不是很幕后？</span><b>＋</b></button><p>很多工作确实在幕后，但也因此能获得很强的全局视角。</p></div>
+<div class="faq"><button><span>Q06　报账很复杂吗？</span><b>＋</b></button><p>需要按照实际要求规范处理，成员会在工作中逐步熟悉材料、票据和流程。</p></div>
+<div class="faq"><button><span>Q07　能锻炼沟通吗？</span><b>＋</b></button><p>很多。确认需求、同步变化、催办节点和处理现场情况，本质上都是沟通。</p></div>
+<div class="faq"><button><span>Q08　最容易踩什么坑？</span><b>＋</b></button><p>只在聊天里说、不留记录；只记结果、不记负责人和时间；临近活动才检查关键事项。</p></div>
+<div class="faq"><button><span>Q09　适合追求效率的人吗？</span><b>＋</b></button><p>适合，但效率不是单纯“做得快”。减少返工、让信息一次说清、让流程可复用，才是更稳定的效率。</p></div>
+<div class="faq"><button><span>Q10　什么样的人适合办公室？</span><b>＋</b></button><p>喜欢把混乱整理清楚、可靠、有责任感，并愿意成为团队稳定后台的人。</p></div>
+</div></section>
+
+<section class="coda rv"><div class="w"><span class="stamp">ORDER / VERIFIED</span><h2>经纬成序，<br>方寸有章。</h2><p>真正的秩序，并不是让所有事情一成不变；而是变化发生时，仍有人知道信息在哪里、责任在谁、下一步往哪里走。</p><small>MAKE SPACE FOR WORK · MAKE STRUCTURE FOR PEOPLE · MAKE MEMORY FOR TOMORROW</small></div></section>
+
+<section class="sec rv"><div class="w"><div class="label">13 / PUBLIC BASIS</div><h2>页面内容依据</h2><div class="sources">
+<a href="https://ccds.fzu.edu.cn/info/1161/11445.htm" target="_blank" rel="noopener"><span>福州大学计算机与大数据学院 · 科创育人公开总结</span><b>↗</b></a>
+<a href="https://news.fzu.edu.cn/info/1014/124192.htm" target="_blank" rel="noopener"><span>福州大学新闻网 · 项目路演与全过程支持</span><b>↗</b></a>
+<a href="https://ccds.fzu.edu.cn/info/1120/10779.htm" target="_blank" rel="noopener"><span>昆冈项目培育、空间与创新实践公开材料</span><b>↗</b></a>
+<a href="https://ccds.fzu.edu.cn/info/1120/9747.htm" target="_blank" rel="noopener"><span>昆冈课程、校企交流与学生工作公开材料</span><b>↗</b></a>
+</div></div></section>
+</main><footer><div class="w">KUN'GANG / OFFICE DEPARTMENT · EXECUTIVE WORKSPACE × LINE DRAWING × ORDER SYSTEM</div></footer>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.querySelectorAll('.faq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+const prog=document.querySelector('.progress');addEventListener('scroll',()=>{let d=document.documentElement;prog.style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%'},{passive:true});
+const cur=document.querySelector('.cursor');if(!reduce)addEventListener('pointermove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});else cur.style.display='none';
+
+// Animated architectural office line-art background.
+const c=document.getElementById('draft'),ctx=c.getContext('2d');let W,H,D=Math.min(devicePixelRatio||1,2),shapes=[];
+function resize(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';ctx.setTransform(D,0,0,D,0,0);seed()}
+function seed(){shapes=Array.from({length:18},(_,i)=>({x:Math.random()*W,y:Math.random()*H,w:70+Math.random()*180,h:40+Math.random()*120,p:Math.random()*6.28,s:.00008+Math.random()*.0001,type:i%5}))}
+function deskline(s,t){let ox=Math.sin(t*s.s+s.p)*22,oy=Math.cos(t*s.s*.8+s.p)*14,X=s.x+ox,Y=s.y+oy;ctx.strokeStyle='rgba(25,50,75,.075)';ctx.lineWidth=.7;ctx.beginPath();
+if(s.type===0){ctx.rect(X,Y,s.w,s.h);ctx.moveTo(X+s.w*.2,Y+s.h);ctx.lineTo(X+s.w*.12,Y+s.h+35);ctx.moveTo(X+s.w*.8,Y+s.h);ctx.lineTo(X+s.w*.88,Y+s.h+35)}
+else if(s.type===1){ctx.rect(X,Y,s.w*.7,s.h*.55);ctx.moveTo(X+s.w*.35,Y+s.h*.55);ctx.lineTo(X+s.w*.35,Y+s.h*.8);ctx.moveTo(X+s.w*.2,Y+s.h*.8);ctx.lineTo(X+s.w*.5,Y+s.h*.8)}
+else if(s.type===2){ctx.rect(X,Y,s.w*.55,s.h);for(let k=1;k<4;k++){ctx.moveTo(X,Y+s.h*k/4);ctx.lineTo(X+s.w*.55,Y+s.h*k/4)}}
+else if(s.type===3){ctx.arc(X+s.w*.25,Y+s.h*.25,Math.min(s.w,s.h)*.2,0,6.28);ctx.moveTo(X+s.w*.25,Y+s.h*.45);ctx.lineTo(X+s.w*.25,Y+s.h*.85)}
+else{ctx.rect(X,Y,s.w,s.h*.6);ctx.moveTo(X-12,Y-12);ctx.lineTo(X+s.w+12,Y-12);ctx.moveTo(X-12,Y-17);ctx.lineTo(X-12,Y-7);ctx.moveTo(X+s.w+12,Y-17);ctx.lineTo(X+s.w+12,Y-7)}
+ctx.stroke()}
+function frame(t){ctx.clearRect(0,0,W,H);for(const s of shapes)deskline(s,t);if(!reduce)requestAnimationFrame(frame)}
+resize();frame(0);addEventListener('resize',resize);
+</script></body></html>

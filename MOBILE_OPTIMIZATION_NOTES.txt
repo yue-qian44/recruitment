@@ -1,0 +1,25 @@
+KUN'GANG MOBILE V7
+Mobile-first optimization pass across index + 7 department pages.
+
+Target:
+- Design Department-like mobile rhythm and readability
+- 760px primary breakpoint + 390px compact breakpoint
+- one-column content flow
+- controlled hero typography
+- mobile-recomposed key art
+- touch-friendly FAQ and navigation
+- no horizontal overflow
+- responsive cards / grids / terminals / HUD
+- reduced visual crowding without erasing each department's identity
+- safe-area padding for modern phones
+- prefers-reduced-motion rules retained from original pages
+
+Pages optimized:
+ - index.html
+ - shuangchuang_design.html
+ - shuangchuang_editorial.html
+ - shuangchuang_incubation.html
+ - shuangchuang_liaison.html
+ - shuangchuang_office.html
+ - shuangchuang_project.html
+ - shuangchuang_science_talk.html

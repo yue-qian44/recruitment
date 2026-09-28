@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f"><title>昆冈众创｜SELECT YOUR CHANNEL</title>
+<style>
+:root{--void:#050b13;--navy:#08182d;--ink:#07101d;--paper:#edf5ff;--blue:#1d73ff;--cyan:#65d9ff;--ice:#dcecff;--acid:#c8ff42;--line:#8ec9ff33;--muted:#7590ad}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--void);color:var(--paper);font-family:Arial,"Microsoft YaHei",sans-serif;overflow-x:hidden}::selection{background:var(--cyan);color:#04101e}
+#matrix{position:fixed;inset:0;width:100%;height:100%;z-index:-4}.grid{position:fixed;inset:0;z-index:-3;pointer-events:none;background-image:linear-gradient(#65d9ff08 1px,transparent 1px),linear-gradient(90deg,#65d9ff08 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 90%)}
+.scan{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.045;background:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 6px);mix-blend-mode:soft-light}.noise{position:fixed;inset:0;z-index:79;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.progress{position:fixed;top:0;left:0;width:0;height:2px;background:var(--cyan);box-shadow:0 0 14px var(--cyan);z-index:100}.wrap{width:min(1360px,calc(100% - 42px));margin:auto}
+nav{height:66px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:28px;font:800 8px ui-monospace;letter-spacing:.16em;color:#8fb2d8}.brand{font:bold 13px Arial;color:white;letter-spacing:-.03em}.brand b{color:var(--cyan)}.live{color:var(--acid)}.live:before{content:"";display:inline-block;width:6px;height:6px;background:var(--acid);border-radius:50%;margin-right:7px;box-shadow:0 0 10px var(--acid)}
+.hero{min-height:calc(100vh - 66px);display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;position:relative;border-bottom:1px solid var(--line);overflow:hidden}.hero-copy{position:relative;z-index:10;padding:75px 0}.sys{font:900 8px ui-monospace;letter-spacing:.2em;color:var(--cyan)}.hero h1{font-size:clamp(72px,10vw,150px);line-height:.69;letter-spacing:-.08em;margin:28px 0;font-weight:1000}.hero h1 .line{display:block;color:transparent;-webkit-text-stroke:1.3px #67d9ff}.hero h1 .blue{color:var(--blue)}.hero-cn{font:700 clamp(28px,3.4vw,47px) "STKaiti","KaiTi",serif;margin:18px 0;color:#dcecff}.hero-p{max-width:590px;color:#7f9bb9;line-height:1.8;font-size:14px}.hero-p b{color:#d9eaff}.cmd{margin-top:28px;max-width:620px;border:1px solid #65d9ff35;background:#06111edb;box-shadow:0 18px 55px #0008}.cmdtop{padding:8px 12px;border-bottom:1px solid #65d9ff24;display:flex;justify-content:space-between;font:800 7px ui-monospace;color:#6385a9}.cmd pre{margin:0;padding:14px;font:11px/1.7 ui-monospace;color:#8cb3d8;white-space:pre-wrap}.cmd .c{color:var(--cyan)}.cmd .a{color:var(--acid)}.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:18px}.chips span{padding:6px 9px;border:1px solid #65d9ff28;font:800 7px ui-monospace;color:#789bbf}
+.keyart{height:720px;position:relative;align-self:end}.slash{position:absolute;inset:4% -15vw -10% 8%;background:linear-gradient(155deg,#0d4eb5 0%,#1675ff 38%,#61d7ff 100%);clip-path:polygon(20% 0,100% 10%,87% 100%,0 87%,11% 55%,0 27%);filter:drop-shadow(0 0 60px #1d73ff22)}.slash:before{content:"";position:absolute;inset:8%;border:1px solid #dff4ff50;transform:rotate(-6deg)}.slash:after{content:"07";position:absolute;right:5%;bottom:-5%;font:1000 220px/.8 Arial;color:#fff0;-webkit-text-stroke:1px #fff3}
+.operator{position:absolute;z-index:5;left:20%;bottom:-1%;width:360px;height:610px;filter:drop-shadow(18px 22px 0 #03102755)}.head{position:absolute;left:123px;top:48px;width:118px;height:135px;border:3px solid #06101e;border-radius:48% 52% 44% 56%;background:linear-gradient(130deg,#ffece3,#e5bfc1 70%);transform:rotate(-4deg)}.hair{position:absolute;left:84px;top:8px;width:220px;height:190px;background:#07111e;clip-path:polygon(6% 30%,23% 5%,40% 17%,54% 0,70% 18%,97% 8%,81% 37%,100% 54%,72% 51%,89% 85%,57% 66%,44% 100%,31% 66%,3% 91%,20% 53%,0 44%);filter:drop-shadow(2px 2px 0 #65d9ff)}.neck{position:absolute;left:157px;top:169px;width:50px;height:60px;background:#d8b1b4;border:2px solid #06101e}.body{position:absolute;left:58px;top:214px;width:265px;height:380px;background:linear-gradient(140deg,#eaf5ff,#7fbaff 42%,#0c284d 43% 100%);border:3px solid #06101e;clip-path:polygon(18% 0,80% 0,100% 100%,0 100%)}.body:before{content:"K/G";position:absolute;left:67px;top:95px;font:1000 67px Arial;color:#06101e;transform:rotate(-8deg)}.body:after{content:"SELECT / 07";position:absolute;right:17px;top:28px;font:900 7px ui-monospace;letter-spacing:.14em;color:var(--cyan);writing-mode:vertical-rl}.arm{position:absolute;top:245px;width:56px;height:285px;background:#aacfff;border:3px solid #06101e;transform-origin:top}.arm.l{left:34px;transform:rotate(15deg)}.arm.r{right:0;transform:rotate(-24deg)}.halo{position:absolute;left:8%;top:11%;width:470px;height:470px;border:1px solid #b8e9ff55;border-radius:50%;animation:spin 16s linear infinite}.halo:before,.halo:after{content:"";position:absolute;border:1px dashed #d8f3ff4d;border-radius:50%}.halo:before{inset:10%}.halo:after{inset:25%}@keyframes spin{to{transform:rotate(360deg)}}
+.hud{position:absolute;z-index:8;border:1px solid #c8eeff5c;background:#07162b99;backdrop-filter:blur(5px);padding:10px;font:800 7px/1.7 ui-monospace;color:#b8d9f5}.h1{right:0;top:13%;width:155px}.h2{left:0;bottom:15%;width:170px}.hud b{color:var(--acid)}.reticle{position:absolute;z-index:8;right:8%;top:44%;width:82px;height:82px;border:1px solid #c8ff4270;border-radius:50%}.reticle:before,.reticle:after{content:"";position:absolute;background:#c8ff4280}.reticle:before{width:120%;height:1px;left:-10%;top:50%}.reticle:after{height:120%;width:1px;top:-10%;left:50%}.note{position:absolute;z-index:9;font:700 30px "STKaiti","KaiTi",serif;color:white;transform:rotate(-8deg);right:1%;bottom:8%}.note small{display:block;font:800 7px ui-monospace;color:#bceaff;letter-spacing:.18em;margin-top:5px}
+.directory{padding:105px 0 130px;position:relative}.dirhead{display:grid;grid-template-columns:.42fr 1.58fr;gap:35px;align-items:end;margin-bottom:48px}.big07{font:1000 clamp(105px,17vw,220px)/.7 Arial;color:transparent;-webkit-text-stroke:1px #65d9ff3b}.dirhead h3{font-size:clamp(40px,5.5vw,76px);letter-spacing:-.055em;line-height:.9;margin:12px 0}.dirhead p{color:#718ca9;max-width:650px;line-height:1.7}
+.units{border-top:1px solid #7fcfff45}.unit{min-height:142px;display:grid;grid-template-columns:100px 1fr 100px 65px;align-items:center;border-bottom:1px solid #7fcfff25;text-decoration:none;color:white;position:relative;overflow:hidden;transition:.32s}.unit:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#0c4ba8,#1d73ff 65%,#42c9ff);transform:translateX(-101%);transition:.38s cubic-bezier(.2,.8,.2,1);z-index:-1}.unit:after{content:attr(data-code);position:absolute;right:8%;font:1000 100px Arial;color:#fff0;-webkit-text-stroke:1px #fff0;transition:.3s;z-index:-1}.unit:hover:before{transform:none}.unit:hover:after{-webkit-text-stroke-color:#ffffff1c}.unit:hover{padding-left:18px}.u-id{font:1000 22px Arial;color:#4f83bd}.u-id small{display:block;font:800 7px ui-monospace;color:#527ca7;margin-top:7px}.unit:hover .u-id,.unit:hover .u-id small{color:white}.u-copy{display:grid;grid-template-columns:170px 1fr 250px;gap:18px;align-items:center}.u-copy span{font:900 8px ui-monospace;color:#62baff;letter-spacing:.16em}.u-copy h2{font-size:clamp(32px,4vw,55px);letter-spacing:-.055em;margin:0}.u-copy p{font:800 8px ui-monospace;color:#6785a5;letter-spacing:.08em}.unit:hover .u-copy span,.unit:hover .u-copy p{color:#d7edff}.u-status{font:800 7px ui-monospace;color:#7093b5}.u-status i{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--acid);box-shadow:0 0 8px var(--acid);margin-right:5px}.unit:hover .u-status{color:white}.u-arrow{font-size:30px;text-align:right;transition:.3s}.unit:hover .u-arrow{transform:translate(6px,-6px)}
+.end{min-height:72vh;display:grid;place-items:center;text-align:center;border-top:1px solid var(--line);position:relative;overflow:hidden;background:radial-gradient(circle,#12376655,transparent 45%)}.end:before{content:"啓";position:absolute;font:700 min(52vw,650px)/1 "STKaiti","KaiTi";color:#65d9ff08}.end>div{position:relative;z-index:2}.end .sys{color:var(--acid)}.end h2{font:700 clamp(53px,8vw,105px)/1.1 "STKaiti","KaiTi";margin:22px 0}.end h2 span{color:var(--cyan)}.end p{font:900 8px ui-monospace;letter-spacing:.25em;color:#6889aa}footer{height:80px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;font:800 8px ui-monospace;color:#567797;letter-spacing:.14em}
+@media(max-width:950px){.hero{grid-template-columns:1fr}.keyart{height:620px}.dirhead{grid-template-columns:1fr}.u-copy{grid-template-columns:130px 1fr}.u-copy p{grid-column:2}.unit{grid-template-columns:75px 1fr 80px 50px}}
+@media(max-width:590px){.wrap{width:min(100% - 28px,1360px)}nav{grid-template-columns:1fr auto}nav>span:nth-child(2){display:none}.hero h1{font-size:64px}.keyart{height:470px}.operator{left:0;transform:scale(.76);transform-origin:bottom left}.halo{width:350px;height:350px}.hud.h1{display:none}.unit{grid-template-columns:45px 1fr 35px;min-height:126px}.u-status{display:none}.u-copy{grid-template-columns:1fr;gap:4px}.u-copy p{grid-column:auto}.u-copy h2{font-size:34px}.u-id{font-size:14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* === MOBILE EXPERIENCE V7 / aligned to Design Department mobile rhythm === */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+@media (max-width: 760px){
+  :root{--mobile-pad:18px}
+  html{scroll-padding-top:64px}
+  body{font-size:15px}
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 36px)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+  nav{min-height:56px!important;height:56px!important;padding-left:0!important;padding-right:0!important}
+  nav .navin,.navin{width:calc(100% - 36px)!important;margin:auto!important;grid-template-columns:1fr auto!important;gap:10px!important}
+  .navlinks,.nav-links,.navmenu,.nav-menu{display:none!important}
+  .brand{font-size:12px!important;white-space:nowrap}
+  .brand small{font-size:6px!important;margin-left:5px!important}
+  .navstate,.nav-state{font-size:6px!important;letter-spacing:.08em!important;white-space:nowrap}
+  .hero{min-height:auto!important;padding-top:56px!important}
+  .hero-grid,.heroGrid,.hero-inner,.hero_inner{min-height:auto!important;grid-template-columns:1fr!important;display:grid!important}
+  .hero-copy{padding:54px 0 28px!important;min-width:0!important}
+  .hero h1{font-size:clamp(54px,18vw,82px)!important;line-height:.78!important;letter-spacing:-.065em!important;overflow-wrap:anywhere}
+  .hero h2{font-size:clamp(34px,11vw,54px)!important;line-height:.92!important}
+  .hero p,.hero-p,.hero-copy p{font-size:14px!important;line-height:1.75!important;max-width:100%!important}
+  .eyebrow,.kicker,.tag,.sys{font-size:7px!important;letter-spacing:.13em!important}
+  .meta,.chips{gap:5px!important}.meta span,.chips span{font-size:6px!important;padding:6px 7px!important}
+  .sec,section.sec{padding:72px 0!important}
+  .sec h2,section h2{font-size:clamp(38px,12vw,58px)!important;line-height:.96!important;letter-spacing:-.045em!important}
+  .lead{font-size:16px!important;line-height:1.75!important}
+  .big01,.big07,.indexbig,.index-big{font-size:92px!important;line-height:.72!important}
+  .cards,.services,.process,.diagnostic,.collab,.growth,.grid-cards,.card-grid{grid-template-columns:1fr!important;gap:8px!important}
+  .card,.service,.phase,.orgunit{min-height:0!important;padding:22px!important}
+  .card h3,.service h3,.phase h3,.orgunit h4{margin-top:34px!important}
+  .faq button{min-height:62px!important;padding:18px 0!important;font-size:15px!important;line-height:1.45!important;gap:14px!important}
+  .faq p{font-size:14px!important;line-height:1.75!important;padding-right:8px!important}
+  footer{padding-left:18px!important;padding-right:18px!important;line-height:1.7!important}
+  [style*="font-size:160px"],[style*="font-size:180px"],[style*="font-size:200px"]{font-size:88px!important}
+}
+@media (max-width: 390px){
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 28px)!important}
+  nav .navin,.navin{width:calc(100% - 28px)!important}
+  .hero h1{font-size:clamp(48px,17vw,68px)!important}
+  .sec h2,section h2{font-size:clamp(35px,11.5vw,49px)!important}
+  .lead{font-size:15px!important}
+}
+
+@media(max-width:760px){
+ .hero{grid-template-columns:1fr!important;min-height:auto!important;padding-top:0!important}
+ .hero-copy{padding:56px 0 22px!important}.keyart,.art{height:480px!important;min-height:480px!important}
+ .operator,.character{left:3%!important;transform:scale(.76)!important;transform-origin:bottom left!important}
+ .halo{width:350px!important;height:350px!important;left:0!important}
+ .hud.h1,.h1.hud{display:none!important}.hud.h2,.h2.hud{left:auto!important;right:0!important;bottom:9%!important}
+ .cmd{max-width:100%!important}.cmd pre{font-size:9px!important;overflow:hidden!important}
+ .directory,.index{padding:75px 0 90px!important}.dirhead,.index-head{grid-template-columns:1fr!important}
+ .unit,.dept{grid-template-columns:42px 1fr 36px!important;min-height:118px!important;padding:0!important}
+ .u-status{display:none!important}.u-copy,.dept-main{grid-template-columns:1fr!important;gap:4px!important}
+ .u-copy p,.dept-main p{grid-column:auto!important;font-size:7px!important}.u-copy h2,.dept h2{font-size:33px!important}
+ .u-id,.no{font-size:13px!important}.u-arrow,.arrow{font-size:24px!important}
+ .end{min-height:65svh!important}.end h2{font-size:48px!important}
+}
+</style></head>
+<body style="padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)"><canvas id="matrix"></canvas><div class="grid"></div><div class="scan"></div><div class="noise"></div><div class="progress"></div>
+<div class="wrap"><nav><div class="brand">KUN'GANG <b>// GATE</b></div><span>FUZHOU UNIVERSITY · CREATIVE SYSTEM</span><span class="live">SYSTEM ONLINE</span></nav>
+<section class="hero"><div class="hero-copy"><div class="sys">BOOT_SEQUENCE / DEPARTMENT_SELECTOR.EXE</div><h1>SELECT<br><span class="blue">YOUR</span><br><span class="line">CHANNEL.</span></h1><div class="hero-cn">七种信号，等待接入。</div><p class="hero-p">这里是昆冈众创工作室的部门入口。<b>选择一个频道，进入它自己的视觉世界。</b> 不必一次理解全部——先找到让你想继续点下去的那一个。</p>
+<div class="cmd"><div class="cmdtop"><span>terminal://kg-gate</span><span>READY</span></div><pre><span class="c">$</span> ./kun_gang --scan departments
+[OK] channels ........ <span class="a">07 ONLINE</span>
+[OK] visual systems .. loaded
+[OK] route table ..... synchronized
+<span class="c">></span> awaiting operator selection_</pre></div>
+<div class="chips"><span>DESIGN</span><span>EDITORIAL</span><span>INCUBATION</span><span>LIAISON</span><span>OFFICE</span><span>PROJECT</span><span>SCI-TALK</span></div></div>
+<div class="keyart" aria-hidden="true"><div class="slash"></div><div class="halo"></div><div class="operator"><div class="arm l"></div><div class="arm r"></div><div class="body"></div><div class="neck"></div><div class="head"></div><div class="hair"></div></div><div class="hud h1">OPERATOR_ID <b>KG-00</b><br>SYNC 100%<br>ROUTE AUTO<br>CHANNEL 07</div><div class="hud h2">POS 26.07 / 119.29<br>SIGNAL <b>STABLE</b><br>ACCESS LEVEL / OPEN</div><div class="reticle"></div><div class="note">向你的频道出发 ↗<small>CHOOSE / ENTER / CREATE</small></div></div></section>
+<section class="directory"><div class="dirhead"><div class="big07">07</div><div><div class="sys">MISSION SELECT / AVAILABLE CHANNELS</div><h3>SELECT A MISSION.</h3><p>每一个入口都是一套不同的工作方式。悬停读取信号，点击进入部门页面。</p></div></div><div class="units"><a class="unit" href="shuangchuang_design.html" data-code="V-01">
+<div class="u-id">01<small>V-01</small></div>
+<div class="u-copy"><span>DESIGN</span><h2>设计部</h2><p>VISUAL / BRAND / CREATIVE</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a>
+<a class="unit" href="shuangchuang_editorial.html" data-code="E-02">
+<div class="u-id">02<small>E-02</small></div>
+<div class="u-copy"><span>EDITORIAL</span><h2>采编部</h2><p>STORY / RECORD / MEDIA</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a>
+<a class="unit" href="shuangchuang_incubation.html" data-code="I-03">
+<div class="u-id">03<small>I-03</small></div>
+<div class="u-copy"><span>INCUBATION</span><h2>孵化部</h2><p>GROW / CULTIVATE / EVOLVE</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a>
+<a class="unit" href="shuangchuang_liaison.html" data-code="L-04">
+<div class="u-id">04<small>L-04</small></div>
+<div class="u-copy"><span>LIAISON</span><h2>联络部</h2><p>LINK / NETWORK / SIGNAL</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a>
+<a class="unit" href="shuangchuang_office.html" data-code="O-05">
+<div class="u-id">05<small>O-05</small></div>
+<div class="u-copy"><span>OFFICE</span><h2>办公室</h2><p>ORDER / SYSTEM / SUPPORT</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a>
+<a class="unit" href="shuangchuang_project.html" data-code="P-06">
+<div class="u-id">06<small>P-06</small></div>
+<div class="u-copy"><span>PROJECT</span><h2>项目部</h2><p>MISSION / CONTROL / EXECUTE</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a>
+<a class="unit" href="shuangchuang_science_talk.html" data-code="S-07">
+<div class="u-id">07<small>S-07</small></div>
+<div class="u-copy"><span>SCI-TALK</span><h2>科创宣讲部</h2><p>STAGE / SPEAK / IMPACT</p></div>
+<div class="u-status"><i></i> ONLINE</div><div class="u-arrow">↗</div>
+</a></div></section>
+<section class="end"><div><div class="sys">GATE / READY FOR INPUT</div><h2>择一处热爱，<br><span>从此启程。</span></h2><p>CHOOSE A CHANNEL · ENTER THE WORLD · MAKE SOMETHING REAL</p></div></section>
+<footer><span>KUN'GANG // DEPARTMENT GATE</span><span>GAME POSTER SYSTEM · EOF_</span></footer></div>
+<script>
+const bar=document.querySelector('.progress');addEventListener('scroll',()=>{let d=document.documentElement;bar.style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%'},{passive:true});
+const c=document.getElementById('matrix'),x=c.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;let W,H,D=Math.min(devicePixelRatio||1,2),cols,drops,nodes=[];
+const glyphs=['0','1','>','/','{','}','[',']','KG','07','SYS','RUN','//'];
+function resize(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(D,0,0,D,0,0);cols=Math.ceil(W/32);drops=Array.from({length:cols},()=>Math.random()*-40);nodes=Array.from({length:24},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.08,vy:(Math.random()-.5)*.08}))}
+function draw(t){x.clearRect(0,0,W,H);x.font='9px ui-monospace';for(let i=0;i<cols;i++){let px=i*32,py=drops[i]*18;x.fillStyle='rgba(101,217,255,.10)';x.fillText(glyphs[(i+Math.floor(drops[i]))%glyphs.length<0?0:(i+Math.floor(drops[i]))%glyphs.length],px,py);if(!reduce){drops[i]+=.06;if(py>H+40)drops[i]=-Math.random()*30}}for(const n of nodes){if(!reduce){n.x+=n.vx;n.y+=n.vy}x.fillStyle='rgba(101,217,255,.22)';x.fillRect(n.x,n.y,2,2)}for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){let a=nodes[i],b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,dd=dx*dx+dy*dy;if(dd<17000){x.strokeStyle='rgba(29,115,255,.045)';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}if(!reduce)requestAnimationFrame(draw)}
+resize();draw(0);addEventListener('resize',resize);
+</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"45c2bf8136a245cd97f1c2e9a96c0730","spa":2}' crossorigin="anonymous"></script>
+</body></html>

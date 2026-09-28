@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f5f0ed">
+<title>昆冈众创｜孵化部 · BREAK THE COCOON</title>
+<style>
+:root{
+  --ink:#0a090c;--paper:#f4f0ed;--paper2:#eadfdc;--pink:#f65b98;--pink2:#ff9abd;
+  --rose:#c92f69;--white:#fffaf8;--gray:#6e686b;--line:#17111622;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,"Microsoft YaHei",sans-serif;overflow-x:hidden}
+::selection{background:var(--pink);color:white}
+#fx{position:fixed;inset:0;width:100%;height:100%;z-index:-3;pointer-events:none}
+.paper-noise{position:fixed;inset:0;z-index:90;pointer-events:none;opacity:.05;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.progress{position:fixed;top:0;left:0;width:0;height:3px;background:var(--pink);z-index:120}
+.w{width:min(1300px,calc(100% - 42px));margin:auto}
+.mono,.eyebrow{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.eyebrow{font-size:9px;font-weight:900;letter-spacing:.19em;color:var(--rose)}
+nav{position:fixed;top:0;left:0;right:0;z-index:70;height:62px;background:#f4f0edeb;backdrop-filter:blur(12px);border-bottom:1px solid #15101522}
+.navin{height:100%;display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:28px}
+.brand{font-weight:1000;letter-spacing:-.03em}.brand small{font:800 8px ui-monospace;letter-spacing:.16em;margin-left:8px;color:#8c747d}
+.navlinks{display:flex;gap:25px;font-size:12px}.navstate{font:900 8px ui-monospace;color:var(--rose);letter-spacing:.12em}
+
+.hero{min-height:100vh;padding-top:62px;position:relative;overflow:hidden;background:linear-gradient(110deg,#f7f3f0 0 61%,#0a090c 61% 100%)}
+.hero:before{content:"";position:absolute;left:-4%;top:7%;width:67%;height:28%;background:var(--pink2);opacity:.3;clip-path:polygon(0 18%,15% 0,23% 35%,38% 8%,48% 46%,65% 5%,78% 37%,100% 18%,93% 72%,72% 55%,59% 100%,38% 62%,20% 94%,4% 68%);transform:rotate(-5deg)}
+.hero-grid{min-height:calc(100vh - 62px);display:grid;grid-template-columns:1.12fr .88fr;align-items:center;position:relative;z-index:2}
+.hero-copy{padding:70px 0 60px;position:relative;z-index:3}
+.hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(76px,10.8vw,160px);line-height:.66;letter-spacing:-.075em;margin:25px 0 25px;font-weight:900}
+.hero h1 .pink{color:var(--pink)}.hero h1 em{font-style:normal;display:block}
+.hero-cn{font-family:"STKaiti","KaiTi",serif;font-size:clamp(34px,4vw,57px);color:var(--rose);font-weight:800;margin:10px 0}
+.hero-sub{font-size:clamp(23px,2.6vw,39px);font-weight:1000;line-height:1.15;max-width:600px}
+.hero-p{max-width:650px;color:#5f595c;line-height:1.85;font-size:15px}
+.hero-p b{color:#151015}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:25px}.meta span{padding:7px 10px;border:1px solid #15101538;font:900 8px ui-monospace;letter-spacing:.1em}.meta span:nth-child(2){background:var(--ink);color:white}.meta span:nth-child(4){background:var(--pink);color:white;border-color:var(--pink)}
+
+.poster-art{height:720px;position:relative;align-self:end}
+.ink-splash{position:absolute;inset:0 -20vw 0 -15%;background:#0a090c;clip-path:polygon(31% 0,100% 0,100% 100%,7% 100%,20% 82%,3% 70%,22% 56%,7% 42%,28% 30%,13% 17%);overflow:hidden}
+.ink-splash:after{content:"";position:absolute;left:9%;top:4%;width:62%;height:93%;border:1px solid #ff8fb94d;transform:rotate(7deg);box-shadow:0 0 80px #f65b9816}
+.figure{position:absolute;z-index:4;left:7%;bottom:0;width:61%;height:87%}
+.head{position:absolute;left:43%;top:5%;width:104px;height:125px;border-radius:48% 48% 43% 50%;background:linear-gradient(120deg,#f0c8ca,#c88992 48%,#713e4b);transform:rotate(5deg);box-shadow:inset -15px -8px 20px #4a263b55}
+.hair{position:absolute;left:30%;top:-1%;width:230px;height:185px;background:#100d12;clip-path:polygon(13% 27%,32% 5%,48% 17%,61% 0,71% 20%,95% 7%,82% 36%,100% 52%,73% 51%,90% 82%,59% 65%,51% 100%,39% 65%,9% 90%,25% 54%,0 47%);filter:drop-shadow(0 0 2px #f65b98)}
+.neck{position:absolute;left:48%;top:21%;width:48px;height:55px;background:#a96c79}
+.body{position:absolute;left:20%;top:27%;width:300px;height:380px;background:linear-gradient(135deg,#19151b,#060507 62%);clip-path:polygon(25% 0,73% 0,100% 100%,0 100%);border:1px solid #f65b982c}
+.body:before{content:"INCUBATION";position:absolute;right:24px;top:80px;color:var(--pink);font:900 8px ui-monospace;letter-spacing:.18em;writing-mode:vertical-rl}
+.arm{position:absolute;top:32%;width:55px;height:260px;background:#100d12;transform-origin:top}.arm.a{left:15%;transform:rotate(19deg)}.arm.b{right:9%;transform:rotate(-36deg)}
+.wing{position:absolute;z-index:-1;top:12%;width:280px;height:390px;border:1px solid #ff8fb982;background:linear-gradient(135deg,#fff8,transparent 32%,#f65b9822),repeating-linear-gradient(65deg,transparent 0 24px,#f65b9835 25px 26px);filter:drop-shadow(0 0 16px #f65b9833)}
+.wing.l{left:-8%;clip-path:polygon(100% 52%,52% 0,0 8%,28% 38%,0 70%,58% 100%);transform:rotate(-12deg)}
+.wing.r{right:-23%;clip-path:polygon(0 52%,48% 0,100% 8%,72% 38%,100% 70%,42% 100%);transform:rotate(12deg)}
+.ribbon{position:absolute;z-index:6;height:13px;background:var(--pink);transform-origin:left center;box-shadow:0 0 14px #f65b9855}.r1{left:0;top:46%;width:80%;transform:rotate(-11deg)}.r2{left:22%;top:67%;width:75%;height:6px;transform:rotate(14deg)}
+.cocoon{position:absolute;z-index:7;right:1%;top:15%;width:125px;height:285px;border-radius:49%;background:linear-gradient(105deg,#fff,#dfbac6 26%,#5b3442 55%,#f4dfe5 78%,#fff);box-shadow:0 0 25px #f65b9866,inset -18px 0 30px #130a10aa;overflow:hidden;animation:breathe 3.7s ease-in-out infinite}
+.cocoon:before{content:"";position:absolute;inset:-10%;background:repeating-linear-gradient(165deg,transparent 0 15px,#3e263259 16px 18px,transparent 19px 29px)}
+.cocoon:after{content:"";position:absolute;left:50%;top:29%;width:2px;height:125px;background:#ff6da7;box-shadow:0 0 13px #ff6da7;clip-path:polygon(0 0,100% 0,20% 17%,100% 28%,0 42%,100% 55%,10% 73%,100% 84%,0 100%);animation:crack 2.7s ease-in-out infinite}
+.butterfly{position:absolute;z-index:9;width:54px;height:38px;animation:float var(--dur) ease-in-out infinite alternate;animation-delay:var(--delay)}
+.butterfly:before,.butterfly:after{content:"";position:absolute;top:6px;width:27px;height:29px;background:linear-gradient(135deg,#ffb1cc,#f65b98 55%,#111);border:1px solid #111}.butterfly:before{right:50%;border-radius:90% 20% 70% 12%;transform-origin:right bottom;animation:wl .6s ease-in-out infinite alternate}.butterfly:after{left:50%;border-radius:20% 90% 12% 70%;transform-origin:left bottom;animation:wr .6s ease-in-out infinite alternate}.b1{left:7%;top:25%;--dur:3.8s;--delay:-1s}.b2{left:25%;top:13%;transform:scale(.62);--dur:4.5s;--delay:-2s}.b3{right:12%;bottom:13%;transform:scale(.75);--dur:4.1s;--delay:-.5s}
+.artnote{position:absolute;z-index:10;color:#f9eaf0;font:800 8px ui-monospace;letter-spacing:.1em}.an1{right:4%;top:8%}.an2{right:2%;top:54%;color:#ff8fb9}.an3{left:28%;bottom:7%}
+.calligraphy{position:absolute;z-index:10;right:0;bottom:5%;font:700 35px/1.15 "STKaiti","KaiTi",serif;color:#f9eaf0;transform:rotate(-3deg)}
+.calligraphy span{display:block;color:var(--pink);font-size:12px;font-family:ui-monospace}
+
+.journey{display:grid;grid-template-columns:repeat(4,1fr) 1.45fr;background:#fff;border-top:1px solid #111;border-bottom:1px solid #111}
+.step{min-height:205px;padding:25px;border-right:1px solid #16111622;position:relative;overflow:hidden}.step b{font:900 9px ui-monospace;color:var(--pink)}.step h3{font-family:Georgia,serif;font-size:22px;line-height:1.05;margin-top:35px}.step p{font-weight:800}.step .mini{position:absolute;right:12px;bottom:12px;width:80px;height:95px;border:1px solid #f65b9845;border-radius:50%;background:repeating-linear-gradient(75deg,transparent 0 8px,#f65b9828 9px 10px)}
+.quote{background:#0b090c;color:white;padding:30px;display:grid;align-content:center;position:relative}.quote:before{content:"“";position:absolute;left:20px;top:5px;color:var(--pink);font:80px Georgia}.quote p{font-family:"STKaiti","KaiTi",serif;font-size:21px;line-height:1.7;margin:25px 0 0}.quote small{color:#a7959d;font:800 8px ui-monospace;margin-top:15px}
+
+.sec{padding:105px 0;position:relative;border-bottom:1px solid #1510151f}.sec.black{background:#0a090c;color:white}.sec.pinkpaper{background:#f0dfe4}.sec h2{font-size:clamp(43px,6.2vw,82px);line-height:.92;letter-spacing:-.055em;margin:16px 0 28px}.lead{font-size:20px;line-height:1.8;max-width:900px;color:#655e61}.black .lead{color:#a99da2}.accent{color:var(--pink)}
+.what{display:grid;grid-template-columns:.55fr 1.45fr;gap:35px;align-items:start}.big01{font:1000 clamp(120px,18vw,250px)/.7 Arial;color:var(--pink);letter-spacing:-.08em}.services{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:42px}.service{min-height:270px;border:1px solid #ffffff20;padding:22px;position:relative;overflow:hidden}.service:before{content:"";position:absolute;right:-20px;top:-20px;width:105px;height:105px;border:1px solid #f65b9844;border-radius:50%}.service b{font:900 8px ui-monospace;color:var(--pink2)}.service h3{font-size:23px;margin-top:72px}.service p{color:#aaa0a4;line-height:1.7;font-size:13px}
+.process{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:42px}.phase{min-height:280px;background:#fff;padding:20px;border-top:3px solid #111;position:relative;transition:.3s}.phase:hover{transform:translateY(-6px);box-shadow:8px 9px 0 #f65b9830}.phase b{font:900 9px ui-monospace;color:var(--rose)}.phase h3{font-size:22px;margin-top:65px}.phase p{color:#625b5e;line-height:1.7;font-size:13px}.phase:after{content:attr(data-stage);position:absolute;right:9px;bottom:-8px;font:1000 55px Arial;color:#f65b9813}
+.jade{display:grid;grid-template-columns:.9fr 1.1fr;gap:8px;margin-top:42px}.jade-art{min-height:500px;background:#0b090c;position:relative;display:grid;place-items:center;overflow:hidden}.gem{width:250px;height:285px;background:linear-gradient(135deg,#fff5f8,#ffb0cb 26%,#d94d83 46%,#43222f 76%,#0e0a0c);clip-path:polygon(22% 0,76% 5%,100% 34%,84% 80%,49% 100%,7% 74%,0 30%);box-shadow:0 0 60px #f65b9830;position:relative}.gem:after{content:"玉";position:absolute;inset:0;display:grid;place-items:center;font:70px "STKaiti";color:#210c1555}.jade-art:after{content:"ROUGH JADE / PINK LIGHT";position:absolute;left:18px;bottom:16px;color:#ff9abd;font:900 8px ui-monospace;letter-spacing:.14em}.polish{background:#fff;padding:30px}.polish h3{font-size:34px}.cut{display:grid;grid-template-columns:95px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid #1510151a}.cut b{font:900 9px ui-monospace;color:var(--rose)}.cut p{margin:0;color:#625c5f;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:42px}.card{min-height:310px;border:1px solid #ffffff1c;padding:22px;transition:.3s}.card:hover{background:#f65b9809;border-color:#f65b9870;transform:translateY(-5px)}.card b{font:900 8px ui-monospace;color:var(--pink)}.card h3{font-size:25px;margin-top:75px}.card p{color:#a69ba0;line-height:1.7}
+.mission{border:1px solid #1510152b;background:#fff;margin-top:40px}.mrow{display:grid;grid-template-columns:105px 1fr 140px;gap:16px;padding:18px 20px;border-bottom:1px solid #15101516}.mrow b{font:900 9px ui-monospace;color:var(--rose)}.mrow p{margin:0;line-height:1.7;color:#5d5659}.mrow span{text-align:right;font:800 8px ui-monospace;color:#a06c7f}
+.join{background:var(--pink);color:#100b0d;overflow:hidden}.join:after{content:"蝶";position:absolute;right:-30px;bottom:-120px;font:500 min(38vw,500px) "STKaiti";color:#fff2}.join h2{font-size:clamp(65px,10vw,135px);line-height:.77}.join .lead{color:#351721}.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:40px;position:relative;z-index:2}.joinbox{background:#0b090c;color:white;padding:28px;min-height:310px}.joinbox h3{font-size:28px}.joinbox p,.joinbox li{color:#b5a8ad;line-height:1.8}
+.faq{border-bottom:1px solid #ffffff1b}.faq button{width:100%;border:0;background:none;color:white;padding:22px 0;display:flex;justify-content:space-between;text-align:left;font-size:18px;cursor:pointer}.faq button b{color:var(--pink);transition:.25s}.faq p{display:none;margin:0;padding:0 0 22px;max-width:900px;color:#a99da2;line-height:1.8}.faq.open p{display:block}.faq.open button b{transform:rotate(45deg)}
+.coda{min-height:96vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:#f4f0ed}.coda:before{content:"蝶";position:absolute;font:500 min(60vw,720px) "STKaiti";color:#f65b9808}.coda h2{position:relative;font-family:"STKaiti","KaiTi",serif;font-size:clamp(55px,8.5vw,112px);line-height:1.18;margin:0}.coda h2 span{color:var(--rose)}.coda p{position:relative;max-width:760px;color:#665e61;line-height:1.9;margin:26px auto}.coda small{position:relative;color:var(--rose);font:900 9px ui-monospace;letter-spacing:.22em}
+.rv{opacity:0;transform:translateY(20px);transition:.75s}.rv.on{opacity:1;transform:none}
+footer{background:#0b090c;color:#7f7076;padding:50px 0;font:9px ui-monospace;letter-spacing:.14em}
+@keyframes breathe{50%{transform:scale(1.025);filter:brightness(1.13)}}@keyframes crack{50%{opacity:.3}}@keyframes wl{to{transform:rotateY(62deg) rotateZ(-8deg)}}@keyframes wr{to{transform:rotateY(-62deg) rotateZ(8deg)}}@keyframes float{to{translate:17px -22px;rotate:7deg}}
+@media(max-width:980px){.hero{background:#f4f0ed}.hero-grid,.what,.jade,.join-grid{grid-template-columns:1fr}.poster-art{height:620px}.journey{grid-template-columns:1fr 1fr}.quote{grid-column:1/-1}.services{grid-template-columns:1fr 1fr}.process{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:1fr 1fr}.navlinks{display:none}}
+@media(max-width:580px){.hero h1{font-size:66px}.poster-art{height:480px}.figure{left:0;width:72%}.cocoon{width:85px;height:210px}.journey,.services,.process,.cards{grid-template-columns:1fr}.mrow{grid-template-columns:70px 1fr}.mrow span{grid-column:2;text-align:left}.sec{padding:78px 0}.navstate{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+/* V10 — Design-page density upgrade */
+.splithead{display:grid;grid-template-columns:.52fr 1.48fr;gap:36px;align-items:start}
+.indexbig{font:1000 clamp(100px,16vw,220px)/.72 Arial;letter-spacing:-.08em;color:transparent;-webkit-text-stroke:1px #f65b98}
+.black .indexbig{-webkit-text-stroke-color:#ff9abd}
+.orggrid{display:grid;grid-template-columns:1.05fr .95fr;gap:7px;margin-top:42px}
+.orgmain{background:#0b090c;color:white;min-height:480px;padding:30px;position:relative;overflow:hidden}
+.orgmain:after{content:"INCUBATE";position:absolute;right:-30px;bottom:-15px;font:1000 95px/.8 Arial;color:#f65b980c;transform:rotate(-90deg);transform-origin:right bottom}
+.orgmain h3{font-size:35px;margin-top:85px}.orgmain p{max-width:620px;color:#b4a8ad;line-height:1.8}
+.orgside{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.orgunit{background:#fff;padding:22px;min-height:235px;border:1px solid #15101514;position:relative}
+.orgunit b{font:900 8px ui-monospace;color:var(--rose)}.orgunit h4{font-size:22px;margin:62px 0 10px}.orgunit p{font-size:13px;color:#655d60;line-height:1.65}
+.orgunit:after{content:"＋";position:absolute;right:15px;top:12px;color:#f65b98;font-size:20px}
+.pipeline{margin-top:45px;border-top:1px solid #151015}
+.pipe{display:grid;grid-template-columns:95px 190px 1fr 150px;gap:18px;align-items:center;padding:20px 0;border-bottom:1px solid #1510151c}
+.pipe .pn{font:900 9px ui-monospace;color:var(--rose)}.pipe h3{font-size:24px;margin:0}.pipe p{margin:0;color:#615a5d;line-height:1.7}.pipe .out{text-align:right;font:900 8px ui-monospace;color:#a27384}
+.black .pipeline{border-color:#ffffff28}.black .pipe{border-color:#ffffff18}.black .pipe p{color:#a99da2}.black .pipe .out{color:#ff9abd}
+.diagnostic{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:42px}
+.diagnostic article{min-height:340px;background:#fff;padding:23px;border-top:4px solid #0b090c;position:relative;overflow:hidden}
+.diagnostic article:after{content:"?";position:absolute;right:-8px;bottom:-35px;font:1000 125px Arial;color:#f65b980c}
+.diagnostic b{font:900 9px ui-monospace;color:var(--rose)}.diagnostic h3{font-size:28px;margin-top:70px}.diagnostic p{color:#625a5e;line-height:1.7}.diagnostic q{display:block;margin-top:22px;font:20px/1.5 "STKaiti","KaiTi",serif;color:#a52858}
+.scenes{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:1fr 1fr;gap:7px;margin-top:42px}
+.scene{min-height:240px;border:1px solid #ffffff1d;padding:23px;position:relative;overflow:hidden}
+.scene:first-child{grid-row:1/3;min-height:487px;background:linear-gradient(155deg,#f65b9818,transparent 55%)}
+.scene b{font:900 8px ui-monospace;color:var(--pink)}.scene h3{font-size:25px;margin-top:65px}.scene:first-child h3{font-size:42px;margin-top:190px}.scene p{color:#a99da2;line-height:1.7}
+.scene .stamp{position:absolute;right:15px;top:15px;border:1px solid #f65b985d;color:#ff9abd;padding:6px 8px;font:900 7px ui-monospace;transform:rotate(4deg)}
+.collab{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-top:42px}
+.collab article{min-height:230px;background:#fff;padding:20px;position:relative;border-bottom:3px solid #f65b98}
+.collab b{font:900 8px ui-monospace;color:var(--rose)}.collab h3{font-size:20px;margin-top:55px}.collab p{font-size:13px;color:#655d60;line-height:1.65}
+.growth{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:42px}
+.growth article{min-height:290px;border:1px solid #ffffff20;padding:23px;position:relative}
+.growth .lv{font:1000 52px Arial;color:#f65b9822}.growth b{font:900 8px ui-monospace;color:#ff9abd}.growth h3{font-size:25px;margin:25px 0 12px}.growth p{color:#aaa0a4;line-height:1.7}
+.logbook{margin-top:42px;background:#fff;border:1px solid #15101525}
+.logline{display:grid;grid-template-columns:120px 1fr 130px;gap:18px;padding:17px 20px;border-bottom:1px solid #15101515;align-items:start}
+.logline b{font:900 8px ui-monospace;color:var(--rose)}.logline p{margin:0;color:#5f585b;line-height:1.7}.logline span{text-align:right;font:800 8px ui-monospace;color:#9d7482}
+.posterquote{margin-top:42px;background:var(--pink);padding:38px;color:#120b0e;display:grid;grid-template-columns:.65fr 1.35fr;gap:35px;align-items:center}
+.posterquote .huge{font:1000 clamp(65px,10vw,130px)/.68 Arial;letter-spacing:-.07em}.posterquote blockquote{font:700 clamp(25px,3vw,40px)/1.45 "STKaiti","KaiTi",serif;margin:0}.posterquote small{display:block;margin-top:20px;font:900 8px ui-monospace;letter-spacing:.15em}
+@media(max-width:980px){.splithead,.orggrid,.posterquote{grid-template-columns:1fr}.diagnostic{grid-template-columns:1fr 1fr}.collab{grid-template-columns:repeat(3,1fr)}.growth{grid-template-columns:1fr 1fr}.scenes{grid-template-columns:1fr 1fr}.scene:first-child{grid-column:1/-1;grid-row:auto;min-height:330px}.scene:first-child h3{margin-top:110px}.pipe{grid-template-columns:75px 150px 1fr}.pipe .out{grid-column:3;text-align:left}}
+@media(max-width:580px){.orgside,.diagnostic,.collab,.growth,.scenes{grid-template-columns:1fr}.scene:first-child{grid-column:auto}.pipe,.logline{grid-template-columns:1fr}.pipe .out,.logline span{grid-column:auto;text-align:left}.indexbig{font-size:95px}}
+
+
+/* V11 — final thematic character / 联络部式主题字收束 */
+.coda{min-height:100vh;isolation:isolate;background:
+  radial-gradient(circle at 50% 48%,rgba(246,91,152,.16),transparent 31%),
+  linear-gradient(180deg,#f4f0ed 0%,#f2e8e8 100%)}
+.coda:before{content:"化";position:absolute;left:50%;top:50%;transform:translate(-50%,-51%) rotate(-5deg);
+  font-family:"STKaiti","KaiTi",serif;font-size:min(73vw,900px);font-weight:900;line-height:.72;
+  color:rgba(246,91,152,.075);-webkit-text-stroke:1px rgba(201,47,105,.09);z-index:0;pointer-events:none}
+.coda:after{content:"METAMORPHOSIS / CULTIVATION / EMERGENCE";position:absolute;left:50%;bottom:7%;
+  transform:translateX(-50%);font:900 8px ui-monospace;letter-spacing:.36em;color:rgba(201,47,105,.58);
+  white-space:nowrap;z-index:2}
+.coda .w{position:relative;z-index:2}
+.coda .theme-mark{width:min(720px,88vw);margin:0 auto 22px;display:flex;align-items:center;gap:14px;
+  color:var(--rose);font:900 9px ui-monospace;letter-spacing:.22em}
+.coda .theme-mark:before,.coda .theme-mark:after{content:"";height:1px;flex:1;background:rgba(201,47,105,.32)}
+.coda h2{text-shadow:0 1px 0 #fff}
+.coda .theme-word{display:block;margin:28px auto 18px;font-family:"STKaiti","KaiTi",serif;
+  font-size:clamp(120px,19vw,250px);line-height:.72;color:var(--rose);letter-spacing:-.08em;
+  filter:drop-shadow(10px 13px 0 rgba(246,91,152,.11));transform:rotate(-3deg)}
+.coda .theme-word small{display:block;margin-top:26px;font:900 8px ui-monospace;letter-spacing:.42em;color:#9e6679;
+  transform:rotate(3deg)}
+.coda .final-seal{display:inline-block;margin-top:25px;padding:8px 10px;border:1px solid var(--rose);
+  color:var(--rose);font:900 8px ui-monospace;letter-spacing:.15em;transform:rotate(-2deg);background:#f4f0edaa}
+@media(max-width:580px){.coda:before{font-size:110vw}.coda:after{letter-spacing:.16em;font-size:6px}.coda .theme-word{font-size:125px}}
+
+
+/* === MOBILE EXPERIENCE V7 / aligned to Design Department mobile rhythm === */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+@media (max-width: 760px){
+  :root{--mobile-pad:18px}
+  html{scroll-padding-top:64px}
+  body{font-size:15px}
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 36px)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+  nav{min-height:56px!important;height:56px!important;padding-left:0!important;padding-right:0!important}
+  nav .navin,.navin{width:calc(100% - 36px)!important;margin:auto!important;grid-template-columns:1fr auto!important;gap:10px!important}
+  .navlinks,.nav-links,.navmenu,.nav-menu{display:none!important}
+  .brand{font-size:12px!important;white-space:nowrap}
+  .brand small{font-size:6px!important;margin-left:5px!important}
+  .navstate,.nav-state{font-size:6px!important;letter-spacing:.08em!important;white-space:nowrap}
+  .hero{min-height:auto!important;padding-top:56px!important}
+  .hero-grid,.heroGrid,.hero-inner,.hero_inner{min-height:auto!important;grid-template-columns:1fr!important;display:grid!important}
+  .hero-copy{padding:54px 0 28px!important;min-width:0!important}
+  .hero h1{font-size:clamp(54px,18vw,82px)!important;line-height:.78!important;letter-spacing:-.065em!important;overflow-wrap:anywhere}
+  .hero h2{font-size:clamp(34px,11vw,54px)!important;line-height:.92!important}
+  .hero p,.hero-p,.hero-copy p{font-size:14px!important;line-height:1.75!important;max-width:100%!important}
+  .eyebrow,.kicker,.tag,.sys{font-size:7px!important;letter-spacing:.13em!important}
+  .meta,.chips{gap:5px!important}.meta span,.chips span{font-size:6px!important;padding:6px 7px!important}
+  .sec,section.sec{padding:72px 0!important}
+  .sec h2,section h2{font-size:clamp(38px,12vw,58px)!important;line-height:.96!important;letter-spacing:-.045em!important}
+  .lead{font-size:16px!important;line-height:1.75!important}
+  .big01,.big07,.indexbig,.index-big{font-size:92px!important;line-height:.72!important}
+  .cards,.services,.process,.diagnostic,.collab,.growth,.grid-cards,.card-grid{grid-template-columns:1fr!important;gap:8px!important}
+  .card,.service,.phase,.orgunit{min-height:0!important;padding:22px!important}
+  .card h3,.service h3,.phase h3,.orgunit h4{margin-top:34px!important}
+  .faq button{min-height:62px!important;padding:18px 0!important;font-size:15px!important;line-height:1.45!important;gap:14px!important}
+  .faq p{font-size:14px!important;line-height:1.75!important;padding-right:8px!important}
+  footer{padding-left:18px!important;padding-right:18px!important;line-height:1.7!important}
+  [style*="font-size:160px"],[style*="font-size:180px"],[style*="font-size:200px"]{font-size:88px!important}
+}
+@media (max-width: 390px){
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 28px)!important}
+  nav .navin,.navin{width:calc(100% - 28px)!important}
+  .hero h1{font-size:clamp(48px,17vw,68px)!important}
+  .sec h2,section h2{font-size:clamp(35px,11.5vw,49px)!important}
+  .lead{font-size:15px!important}
+}
+
+@media(max-width:760px){
+ .hero{background:#f4f0ed!important}.hero-grid{display:flex!important;flex-direction:column!important}
+ .poster-art{height:470px!important;width:100%!important;align-self:auto!important;order:2!important;margin-top:-10px!important}
+ .ink-splash{inset:0 -38vw 0 -10%!important}.figure{left:2%!important;bottom:0!important;width:72%!important;height:91%!important}
+ .head{transform:scale(.78) rotate(5deg);transform-origin:top left}.hair{transform:scale(.78);transform-origin:top left}
+ .body{left:16%!important;top:29%!important;width:230px!important;height:310px!important}
+ .arm{height:210px!important}.cocoon{right:2%!important;top:16%!important;width:80px!important;height:195px!important}
+ .calligraphy{right:2%!important;bottom:3%!important;font-size:25px!important}.artnote{font-size:6px!important}
+ .journey{grid-template-columns:1fr!important}.step{min-height:145px!important}.quote{grid-column:auto!important}
+ .what,.jade,.join-grid,.splithead,.orggrid,.posterquote{grid-template-columns:1fr!important}
+ .orgside{grid-template-columns:1fr!important}.orgmain{min-height:360px!important}
+ .diagnostic article{min-height:260px!important}.scenes{grid-template-columns:1fr!important;grid-template-rows:auto!important}
+ .scene,.scene:first-child{grid-column:auto!important;grid-row:auto!important;min-height:250px!important}.scene:first-child h3{margin-top:90px!important}
+ .pipe,.mrow,.logline{grid-template-columns:1fr!important}.pipe .out,.mrow span,.logline span{grid-column:auto!important;text-align:left!important}
+ .coda{min-height:88svh!important;padding:70px 0!important}.coda:before{font-size:105vw!important}.coda .theme-word{font-size:120px!important}
+}
+</style>
+</head>
+<body style="padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)">
+<canvas id="fx"></canvas><div class="paper-noise"></div><div class="progress"></div>
+<nav><div class="w navin"><div class="brand">昆冈众创 <small>KUN'GANG</small></div><div class="navlinks"><span>孵化部</span><span>项目培育</span><span>金课体系</span><span>导师资源</span><span>招新加入</span></div><div class="navstate">METAMORPHOSIS / ACTIVE</div></div></nav>
+
+<header class="hero">
+<div class="w hero-grid">
+  <div class="hero-copy">
+    <div class="eyebrow">INCUBATION DEPARTMENT / CULTIVATE POTENTIAL</div>
+    <h1><em>BREAK</em><em>THE <span class="pink">COCOON</span></em></h1>
+    <div class="hero-cn">破茧成蝶，</div>
+    <div class="hero-sub">让好想法，<br>长出真实的影响力。</div>
+    <p class="hero-p">孵化部负责项目发掘与培育，链接课程、导师、赛事和行业资源。<b>陪伴一个好想法走向更完整的产品、更成熟的团队和更广阔的舞台。</b></p>
+    <div class="meta"><span>FIND THE SPARK</span><span>NURTURE</span><span>CONNECT</span><span>GROW</span><span>[ INCUBATION ]</span></div>
+  </div>
+  <div class="poster-art" aria-hidden="true">
+    <div class="ink-splash"></div>
+    <div class="figure"><div class="wing l"></div><div class="wing r"></div><div class="body"></div><div class="arm a"></div><div class="arm b"></div><div class="neck"></div><div class="head"></div><div class="hair"></div></div>
+    <div class="ribbon r1"></div><div class="ribbon r2"></div>
+    <div class="cocoon"></div>
+    <div class="butterfly b1"></div><div class="butterfly b2"></div><div class="butterfly b3"></div>
+    <div class="artnote an1">GROW IDEAS → INTO IMPACT</div><div class="artnote an2">METAMORPHOSIS / IN PROGRESS</div><div class="artnote an3">WINGS / UNFOLDING</div>
+    <div class="calligraphy">金生丽水<br>玉出昆冈<span>KUN'GANG / CULTIVATION</span></div>
+  </div>
+</div>
+</header>
+
+<section class="journey">
+  <article class="step"><b>// 01</b><h3>FIND<br>THE SPARK</h3><p>发现好想法</p><div class="mini"></div></article>
+  <article class="step"><b>// 02</b><h3>NURTURE<br>THE POTENTIAL</h3><p>培育与打磨</p><div class="mini"></div></article>
+  <article class="step"><b>// 03</b><h3>CONNECT<br>THE RESOURCES</h3><p>链接资源网络</p><div class="mini"></div></article>
+  <article class="step"><b>// 04</b><h3>HELP<br>THE GROWTH</h3><p>陪伴项目成长</p><div class="mini"></div></article>
+  <aside class="quote"><p>我们相信，<br>每一个好想法都值得被认真对待，<br>并被给予足够的时间与资源，<br>在昆冈找到自己的生长方式。</p><small>— KUN'GANG INCUBATION</small></aside>
+</section>
+
+<main>
+
+<section class="sec rv"><div class="w">
+<div class="splithead"><div class="indexbig">01</div><div><div class="eyebrow">ABOUT / INCUBATION DEPARTMENT</div><h2>孵化不是包装，<br>而是<span class="accent">陪一个项目变得真实。</span></h2><p class="lead">孵化部面向创新创业项目的前端发现与持续培育：从一个还说不清楚的想法开始，帮助团队识别问题、补足证据、链接资源、接受反馈，再把反馈变成下一轮行动。我们关心的不是“材料看起来像不像一个成熟项目”，而是项目本身有没有真的向前走。</p></div></div>
+<div class="posterquote"><div class="huge">FROM<br>ROUGH<br>TO REAL.</div><div><blockquote>“璞中藏玉，茧中有翼。<br>真正的孵化，是让潜力获得生长的条件。”</blockquote><small>KUN'GANG / INCUBATION PHILOSOPHY</small></div></div>
+</div></section>
+
+<section class="sec pinkpaper rv"><div class="w">
+<div class="eyebrow">02 / ORGANIZATION · HOW WE SUPPORT A PROJECT</div><h2>不是一个人“带项目”，<br>而是一套<span class="accent">培育协作系统。</span></h2><p class="lead">围绕项目不同阶段，孵化工作会在课程、项目跟进、赛事训练、资源链接与经验沉淀之间切换。每个模块都服务于同一件事：让团队更清楚自己现在在哪里、为什么卡住、下一步该验证什么。</p>
+<div class="orggrid"><article class="orgmain"><div class="eyebrow">CORE / PROJECT CULTIVATION</div><h3>项目培育与持续跟进</h3><p>记录项目状态，组织阶段沟通，帮助团队把模糊问题拆成可验证任务；在需要时链接课程、导师、赛事和行业资源，并把每次反馈沉淀成下一轮行动。</p><div class="meta"><span>DIAGNOSE</span><span>TRACK</span><span>CONNECT</span><span>ITERATE</span></div></article>
+<div class="orgside"><article class="orgunit"><b>A / COURSE</b><h4>课程与金课</h4><p>把技术、赛事方法和项目经验转化成可进入的学习入口。</p></article><article class="orgunit"><b>B / TRAINING</b><h4>训练与路演</h4><p>通过模拟评审、展示和追问，让问题在正式舞台前暴露。</p></article><article class="orgunit"><b>C / RESOURCE</b><h4>导师与资源</h4><p>根据项目阶段寻找更匹配的老师、专家、企业或技术生态。</p></article><article class="orgunit"><b>D / ARCHIVE</b><h4>经验与传承</h4><p>把成熟团队踩过的坑、做过的验证和有效方法留下来。</p></article></div></div>
+</div></section>
+
+<section class="sec black rv"><div class="w"><div class="what"><div class="big01">03</div><div><div class="eyebrow">03 / WHAT WE DO</div><h2>我们做的，<br>是让好项目<span class="accent">真正长起来。</span></h2><p class="lead">从灵感萌芽，到落地成果，孵化部陪伴项目走过关键的每一段路。</p></div></div><div class="services">
+<article class="service"><b>COURSE / CAMP</b><h3>金课与训练营</h3><p>通过课程、训练与集中打磨，让项目更早建立方法和能力。</p></article>
+<article class="service"><b>MENTOR</b><h3>导师与专家资源</h3><p>链接校内外导师，在关键问题上获得更专业的追问与指导。</p></article>
+<article class="service"><b>COMPETITION</b><h3>赛事与路演对接</h3><p>帮助项目接触比赛、训练、展示和真实反馈环境。</p></article>
+<article class="service"><b>INDUSTRY</b><h3>行业与生态链接</h3><p>连接企业、技术社区与更广阔的创新生态。</p></article>
+</div></div></section>
+
+<section class="sec pinkpaper rv"><div class="w"><div class="eyebrow">04 / METAMORPHOSIS</div><h2>项目的成长，<br>像一场<span class="accent">破茧。</span></h2><p class="lead">真正的变化往往先发生在内部。调研、失败、反馈、修改，看起来不耀眼，却是翅膀形成的过程。</p><div class="process">
+<article class="phase" data-stage="01"><b>SEED</b><h3>发现</h3><p>从课程、科研、比赛或真实需求里捕捉项目雏形。</p></article>
+<article class="phase" data-stage="02"><b>FEED</b><h3>追问</h3><p>问题真实吗？谁需要？为什么现有方式还不够好？</p></article>
+<article class="phase" data-stage="03"><b>COCOON</b><h3>构建</h3><p>技术、用户、数据与表达开始形成更完整的骨架。</p></article>
+<article class="phase" data-stage="04"><b>CHANGE</b><h3>暴露</h3><p>让导师、专家、用户和路演尽早指出盲区。</p></article>
+<article class="phase" data-stage="05"><b>BREAK</b><h3>迭代</h3><p>把反馈转成下一版实验、产品、材料和行动。</p></article>
+<article class="phase" data-stage="06"><b>WINGS</b><h3>继续</h3><p>比赛不是终点，让项目继续研发、实践和传承。</p></article>
+</div></div></section>
+
+
+<section class="sec rv"><div class="w"><div class="eyebrow">05 / PROJECT DIAGNOSTIC LAB</div><h2>先别急着给答案。<br>先把<span class="accent">问题问深一层。</span></h2><p class="lead">孵化部最重要的能力之一，是项目诊断。一个项目卡住时，原因可能根本不在 PPT，而在问题定义、技术证据、用户理解、价值判断或下一步行动。</p>
+<div class="diagnostic"><article><b>PROBLEM</b><h3>问题</h3><p>它解决的是谁的什么问题？这个问题是否真实、频繁、值得解决？</p><q>“如果不做它，会怎样？”</q></article><article><b>TECH</b><h3>技术</h3><p>现在真正实现了什么？哪些是 Demo，哪些只是未来设想？</p><q>“证据在哪里？”</q></article><article><b>USER</b><h3>用户</h3><p>谁会使用？有没有访谈、测试、数据或真实场景支持判断？</p><q>“谁真的需要？”</q></article><article><b>VALUE</b><h3>价值</h3><p>相比已有方案，它究竟改变了什么？优势是否可以被验证？</p><q>“为什么是你？”</q></article><article><b>NEXT</b><h3>下一步</h3><p>不说“继续优化”，而是明确下一项实验、负责人和判断标准。</p><q>“下周具体做什么？”</q></article></div>
+</div></section>
+
+<section class="sec rv"><div class="w"><div class="eyebrow">06 / JADE IN THE COCOON</div><h2>破茧之外，<br>更要<span class="accent">培育良材美玉。</span></h2><div class="jade"><div class="jade-art"><div class="gem"></div></div><div class="polish"><h3>璞中藏玉，茧中有翼。</h3>
+<div class="cut"><b>识 / SEE</b><p>看见项目真正有价值的内核，而不是被漂亮术语带走。</p></div>
+<div class="cut"><b>切 / CUT</b><p>把大方向切成问题、技术、用户、证据与下一步。</p></div>
+<div class="cut"><b>磋 / TEST</b><p>用访谈、实验、训练与路演检验原来的假设。</p></div>
+<div class="cut"><b>琢 / REFINE</b><p>根据反馈改变产品、材料与表达。</p></div>
+<div class="cut"><b>磨 / CONTINUE</b><p>保持长期跟进，让真正的光泽在一次次修改中出现。</p></div>
+</div></div></div></section>
+
+
+<section class="sec black rv"><div class="w"><div class="eyebrow">08 / REAL WORK SCENES</div><h2>你真正会遇见的，<br>不是抽象的“创新”，而是<span class="accent">一个个现场。</span></h2><p class="lead">孵化部的工作会随着项目节点改变：有时像编辑，帮团队把逻辑理清；有时像陪练，在路演前不断追问；有时像连接器，把项目带到更合适的人面前。</p>
+<div class="scenes"><article class="scene"><span class="stamp">PROJECT ROOM</span><b>SCENE 01 / PROJECT CLINIC</b><h3>项目诊疗室</h3><p>团队说“用户有需求”，你继续问：访谈了谁？多少人？为什么现在的解决方案不够？真正的孵化往往从一个不太舒服、但很必要的问题开始。</p></article><article class="scene"><span class="stamp">DEMO</span><b>SCENE 02</b><h3>模拟路演</h3><p>计时、提问、记录盲区，把正式答辩可能遇到的问题提前发生。</p></article><article class="scene"><span class="stamp">MENTOR</span><b>SCENE 03</b><h3>导师交流</h3><p>提前整理项目状态与关键问题，让有限的交流时间真正解决问题。</p></article><article class="scene"><span class="stamp">COURSE</span><b>SCENE 04</b><h3>金课现场</h3><p>把一个值得学的方法组织成同学真正听得懂、用得上的内容。</p></article><article class="scene"><span class="stamp">REVIEW</span><b>SCENE 05</b><h3>赛后复盘</h3><p>奖项之外，更重要的是哪些判断被验证、哪些问题要带回下一轮。</p></article></div>
+</div></section>
+
+<section class="sec rv"><div class="w"><div class="eyebrow">09 / HOW WE WORK</div><h2>一次完整跟进，<br>要形成<span class="accent">反馈闭环。</span></h2><div class="pipeline">
+<div class="pipe"><div class="pn">T-01 / INPUT</div><h3>收集状态</h3><p>版本、目标、当前进度、卡点、截止节点，先让信息完整。</p><div class="out">OUTPUT / SNAPSHOT</div></div>
+<div class="pipe"><div class="pn">T-02 / READ</div><h3>识别主问题</h3><p>区分“表面症状”和真正阻碍项目向前的关键问题。</p><div class="out">OUTPUT / KEY ISSUE</div></div>
+<div class="pipe"><div class="pn">T-03 / EXPOSE</div><h3>创造反馈</h3><p>安排访谈、模拟路演、导师交流、技术验证或行业调研。</p><div class="out">OUTPUT / FEEDBACK</div></div>
+<div class="pipe"><div class="pn">T-04 / DECIDE</div><h3>形成决策</h3><p>每条反馈明确采纳与否、原因、负责人、截止时间和验证方式。</p><div class="out">OUTPUT / ACTION</div></div>
+<div class="pipe"><div class="pn">T-05 / LOOP</div><h3>跟进下一版</h3><p>下一次沟通先检查上轮动作，再进入新的问题，而不是重新从头聊。</p><div class="out">OUTPUT / ITERATION</div></div>
+</div></div></section>
+
+<section class="sec black rv"><div class="w"><div class="eyebrow">07 / INCUBATION NETWORK</div><h2>一块美玉的成器，<br>需要<span class="accent">环境与碰撞。</span></h2><div class="cards">
+<article class="card"><b>GOLDEN COURSE</b><h3>课程</h3><p>让陌生技术、赛事方法和项目经验成为第一层入口。</p></article>
+<article class="card"><b>PROJECT</b><h3>项目培育</h3><p>梳理现状，找到下一阶段最值得解决的问题。</p></article>
+<article class="card"><b>MENTOR</b><h3>导师专家</h3><p>在需要专业判断时进入更匹配的反馈环境。</p></article>
+<article class="card"><b>DEMO DAY</b><h3>路演赛事</h3><p>让项目逻辑接受外部理解、评审与真实追问。</p></article>
+<article class="card"><b>PEER / INDUSTRY</b><h3>生态链接</h3><p>让朋辈经验、企业和技术社区成为持续生长的养分。</p></article>
+</div></div></section>
+
+
+<section class="sec pinkpaper rv"><div class="w"><div class="eyebrow">11 / CROSS-DEPARTMENT COLLABORATION</div><h2>孵化不是孤岛。<br>一个项目会穿过<span class="accent">整个昆冈。</span></h2><p class="lead">项目培育需要内容、视觉、活动、资源与组织共同支持。孵化部更像项目侧的接口：知道当前最需要什么，并把需求准确交给合适的人。</p>
+<div class="collab"><article><b>DESIGN</b><h3>设计部</h3><p>项目视觉、展示材料与信息表达，让复杂内容更容易被理解。</p></article><article><b>PROJECT</b><h3>项目部</h3><p>赛事节点、项目推进与任务协同，帮助团队进入更明确的节奏。</p></article><article><b>OUTREACH</b><h3>宣讲部</h3><p>表达训练、舞台呈现与知识传播，让项目讲得清楚、站得住。</p></article><article><b>EDITORIAL</b><h3>采编部</h3><p>项目故事、采访记录与成果传播，把成长过程沉淀下来。</p></article><article><b>LIAISON</b><h3>联络部</h3><p>外部嘉宾、企业与合作资源连接，让项目接触更大的网络。</p></article><article><b>OFFICE</b><h3>办公室</h3><p>活动、资料、流程与组织支持，让培育工作稳定落地。</p></article></div>
+</div></section>
+
+<section class="sec black rv"><div class="w"><div class="eyebrow">12 / GROW WITH US</div><h2>你培育项目，<br>项目也会<span class="accent">反过来塑造你。</span></h2><div class="growth"><article><div class="lv">L1</div><b>OBSERVER</b><h3>先学会看</h3><p>读懂一个项目在说什么，区分事实、判断、假设和包装。</p></article><article><div class="lv">L2</div><b>QUESTIONER</b><h3>再学会问</h3><p>从“听懂介绍”走向“找到关键问题”，让追问真正推动项目。</p></article><article><div class="lv">L3</div><b>CONNECTOR</b><h3>开始会连接</h3><p>知道什么问题需要什么资源，也知道怎样把需求说清楚。</p></article><article><div class="lv">L4</div><b>CULTIVATOR</b><h3>最后能陪跑</h3><p>跨周、跨月保持项目记忆，推动反馈闭环，并把经验传给后来者。</p></article></div>
+<div class="logbook"><div class="logline"><b>WEEK 01</b><p>第一次读项目材料：把“听起来很厉害”改写成自己真正理解的三句话。</p><span>READ / REWRITE</span></div><div class="logline"><b>WEEK 03</b><p>第一次参与项目沟通：负责记录问题、反馈、决策和下一步。</p><span>MEETING / LOG</span></div><div class="logline"><b>MONTH 02</b><p>第一次独立跟进一个小任务：确认负责人、节点和验证结果。</p><span>TRACK / CLOSE</span></div><div class="logline"><b>LATER</b><p>你开始能在团队还没说出口之前，看见项目真正缺的那一块。</p><span>JUDGEMENT / GROW</span></div></div>
+</div></section>
+
+<section class="sec pinkpaper rv"><div class="w"><div class="eyebrow">10 / YOUR FIRST MISSION</div><h2>拿到一块“璞玉”，<br>先别急着<span class="accent">替它发光。</span></h2><div class="mission">
+<div class="mrow"><b>01 / 识璞</b><p>项目解决什么问题？技术做到哪里？谁真正需要？现有证据是什么？</p><span>SCAN / CORE</span></div>
+<div class="mrow"><b>02 / 看纹</b><p>把未知项拆成用户、技术、数据、市场、商业和表达。</p><span>MAP / UNKNOWN</span></div>
+<div class="mrow"><b>03 / 结茧</b><p>判断下一步需要导师、用户访谈、企业调研，还是模拟路演。</p><span>BUILD / ENV</span></div>
+<div class="mrow"><b>04 / 裂茧</b><p>每条反馈都明确是否采纳、为什么、谁负责、什么时候验证。</p><span>BREAK / LOOP</span></div>
+<div class="mrow"><b>05 / 展翼</b><p>下一版不只是更漂亮，而要更真实、更清楚、更经得起追问。</p><span>WINGS / READY</span></div>
+</div></div></section>
+
+<section class="sec join rv"><div class="w"><div class="eyebrow" style="color:#351721">13 / JOIN INCUBATION</div><h2>FIND.<br>NURTURE.<br>EMERGE.</h2><p class="lead">你不需要已经创业，也不需要一开始就懂所有比赛规则。我们更看重对真实问题的好奇、持续跟进的耐心，以及愿意陪一件事慢慢变好的心。</p><div class="join-grid">
+<article class="joinbox"><h3>我们希望你带来的</h3><ul><li>对创新、项目和真实问题保持好奇。</li><li>愿意沟通，也愿意长期跟进。</li><li>不怕不懂，敢提问、查资料、做验证。</li><li>能接受反复修改，不把反馈理解成否定。</li></ul></article>
+<article class="joinbox"><h3>我们一起长出来的</h3><p>判断问题、理解项目、链接资源、组织反馈与长期培育的能力。也许有一天，你会看见自己陪伴过的那个粗糙想法，真正破茧。</p><div class="meta"><span>ZERO-BASE</span><span>LEARN BY DOING</span><span>GROW TOGETHER</span></div></article>
+</div></div></section>
+
+<section class="sec black rv"><div class="w"><div class="eyebrow">14 / FAQ</div><h2>BEFORE<br><span class="accent">EMERGENCE.</span></h2>
+<div class="faq"><button><span>Q01　零基础、没有项目经历可以来吗？</span><b>＋</b></button><p>可以。可以从课程组织、资料整理、活动协助和项目跟进等任务开始。</p></div>
+<div class="faq"><button><span>Q02　加入后一定要参加比赛吗？</span><b>＋</b></button><p>不要求立刻成为参赛选手。你会接触项目与赛事，再逐渐找到适合自己的方向。</p></div>
+<div class="faq"><button><span>Q03　孵化部是不是主要负责催进度？</span><b>＋</b></button><p>不是。重点是帮助项目明确问题、反馈和下一步，而不是只追截止日期。</p></div>
+<div class="faq"><button><span>Q04　不会商业计划书怎么办？</span><b>＋</b></button><p>可以学。比格式更重要的是理解问题、技术、用户、证据与价值。</p></div>
+<div class="faq"><button><span>Q05　会接触导师和企业吗？</span><b>＋</b></button><p>在项目路演、训练营、课程和相关活动中有机会接触，具体以当期安排为准。</p></div>
+<div class="faq"><button><span>Q06　平时具体会做哪些事情？</span><b>＋</b></button><p>可能包括项目资料整理、阶段沟通、课程与训练协助、路演记录、反馈归纳、项目状态跟进和资源对接等。</p></div>
+<div class="faq"><button><span>Q07　是不是需要很懂技术？</span><b>＋</b></button><p>不要求一开始就精通所有技术。更重要的是愿意理解项目、查资料，并知道什么时候需要请教更专业的人。</p></div>
+<div class="faq"><button><span>Q08　能不能加入具体科创项目？</span><b>＋</b></button><p>有机会。是否进入具体团队要看项目需求、个人兴趣和能力匹配；孵化部本身也会让你接触不同方向的项目。</p></div>
+<div class="faq"><button><span>Q09　这个部门最锻炼什么？</span><b>＋</b></button><p>项目理解、结构化思考、沟通追问、资源连接和长期跟进。你会越来越习惯把模糊问题变成可以行动的下一步。</p></div>
+<div class="faq"><button><span>Q10　什么样的人会在这里待得很舒服？</span><b>＋</b></button><p>对“一个想法为什么能变成项目”感兴趣，愿意耐心陪跑，喜欢观察、提问、整理和连接资源的人。</p></div>
+</div></section>
+
+
+<section class="sec rv"><div class="w"><div class="eyebrow">15 / CULTIVATION PRINCIPLE</div><h2>不替项目成长，<br>只让成长<span class="accent">更有可能发生。</span></h2><p class="lead">孵化部的价值不在于替团队完成答案，而在于创造足够好的问题、足够真实的反馈、足够合适的连接，以及足够稳定的陪伴。项目最终要靠自己的生命力破茧，也要在一次次琢磨中形成自己的纹理。</p><div class="posterquote"><div class="huge">BREAK<br>THE<br>COCOON.</div><div><blockquote>“玉不琢，不成器。<br>茧不破，不见翼。”</blockquote><small>INCUBATION / PATIENCE / FEEDBACK / GROWTH</small></div></div></div></section>
+
+<section class="coda rv"><div class="w">
+<div class="theme-mark">KUN'GANG / INCUBATION · THEME CHARACTER</div>
+<span class="theme-word">化<small>FROM COCOON TO WINGS · FROM ROUGH JADE TO FORM</small></span>
+<h2>如切如磋，<br><span>如琢如磨。</span></h2>
+<p>“化”，不是一瞬间的奇迹。茧中的翅膀，要经历漫长的重构；璞中的光泽，也要经过一次次切磋琢磨。孵化所做的，是发现潜力、创造条件、给予碰撞，也给予时间——让一个尚未成熟的好想法，最终长成它自己的模样。</p>
+<div class="final-seal">破茧 · 琢玉 · 成材 · 见光</div>
+<small>BREAK THE COCOON · CULTIVATE THE JADE · 玉出昆冈</small>
+</div></section>
+</main>
+<footer><div class="w">KG//INCUBATION · PINK HAND-DRAWN POSTER SYSTEM · EOF</div></footer>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05});
+document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.querySelectorAll('.faq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+const bar=document.querySelector('.progress');
+addEventListener('scroll',()=>{const d=document.documentElement;bar.style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%'},{passive:true});
+
+// Hand-drawn pink ink strokes + drifting butterfly dust.
+const c=document.getElementById('fx'),x=c.getContext('2d');let W,H,D=Math.min(devicePixelRatio||1,2),dust=[],lines=[];
+function seed(){dust=Array.from({length:55},()=>({x:Math.random()*W,y:Math.random()*H,r:.5+Math.random()*1.5,v:.04+Math.random()*.14,p:Math.random()*6.28}));lines=Array.from({length:6},(_,i)=>({y:H*(.13+i*.16),a:10+Math.random()*22,p:Math.random()*6.28}))}
+function resize(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(D,0,0,D,0,0);seed()}
+function draw(t){x.clearRect(0,0,W,H);for(const l of lines){x.beginPath();for(let px=-20;px<W+20;px+=22){let py=l.y+Math.sin(px*.012+t*.00016+l.p)*l.a;if(px<0)x.moveTo(px,py);else x.lineTo(px,py)}x.strokeStyle='rgba(246,91,152,.045)';x.lineWidth=1;x.stroke()}for(const q of dust){if(!reduce){q.y-=q.v;if(q.y<0)q.y=H}let a=.035+.03*Math.sin(t*.001+q.p);x.fillStyle=`rgba(201,47,105,${a})`;x.beginPath();x.arc(q.x+Math.sin(t*.0004+q.p)*6,q.y,q.r,0,Math.PI*2);x.fill()}if(!reduce)requestAnimationFrame(draw)}
+resize();draw(0);addEventListener('resize',resize);
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"45c2bf8136a245cd97f1c2e9a96c0730","spa":2}' crossorigin="anonymous"></script>
+</body></html>

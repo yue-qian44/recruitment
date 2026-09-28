@@ -1,0 +1,20 @@
+V6 custom structure+text fingerprint audit
+Target < 50%
+
+shuangchuang_project.html vs shuangchuang_liaison.html: 37.1%
+shuangchuang_office.html vs shuangchuang_science_talk.html: 28.0%
+shuangchuang_office.html vs shuangchuang_project.html: 27.4%
+shuangchuang_incubation.html vs shuangchuang_project.html: 26.9%
+shuangchuang_incubation.html vs shuangchuang_science_talk.html: 26.9%
+shuangchuang_project.html vs shuangchuang_science_talk.html: 26.3%
+shuangchuang_incubation.html vs shuangchuang_liaison.html: 25.5%
+shuangchuang_editorial.html vs shuangchuang_science_talk.html: 25.2%
+shuangchuang_office.html vs shuangchuang_liaison.html: 25.0%
+shuangchuang_incubation.html vs shuangchuang_office.html: 24.7%
+shuangchuang_editorial.html vs shuangchuang_liaison.html: 23.8%
+shuangchuang_science_talk.html vs shuangchuang_liaison.html: 23.7%
+shuangchuang_incubation.html vs shuangchuang_editorial.html: 22.2%
+shuangchuang_editorial.html vs shuangchuang_project.html: 20.9%
+shuangchuang_office.html vs shuangchuang_editorial.html: 19.7%
+
+MAX: 37.1%

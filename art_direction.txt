@@ -1,0 +1,9 @@
+V6 ART DIRECTION
+孵化部 — BIOSPHERE / 玉出昆冈：细胞、生长、玉石、生命实验室
+办公室 — BLUEPRINT / 经纬成序：瑞士网格、工程蓝图、扫描线、印章
+采编部 — THE PRESS / 文章千古事：纸媒、墨迹、编辑批注、红色校样
+项目部 — ORBITAL COMMAND / 运筹帷幄：轨道、HUD、任务控制、战略
+科创宣讲部 — THEATRE / 言之有文：幕布、聚光灯、16:9舞台、声音
+联络部 — CONSTELLATION / 海内知己：星图、节点、通信协议、连接
+Motion: scroll reveal + progress + ambient cursor glow + department-specific motion.
+Accessibility: prefers-reduced-motion respected by cursor interaction; core content remains readable without JS.

@@ -1,0 +1,172 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1030">
+<title>昆冈众创｜联络部招新 · LINK THE WORLD</title>
+<style>
+:root{--navy:#0a0e28;--ink:#10152f;--paper:#f5f0e7;--cyan:#35e7e2;--lime:#e7ff4d;--pink:#ff5d91;--violet:#7d68ff;--white:#fffdf6;--muted:#9ba4bd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--white);font-family:Arial,"Microsoft YaHei",sans-serif;overflow-x:hidden}::selection{background:var(--lime);color:#111}
+#webbg{position:fixed;inset:0;width:100%;height:100%;z-index:-4;background:radial-gradient(circle at 70% 20%,#35e7e215,transparent 30%),linear-gradient(145deg,#090d27,#11153b 55%,#090c22)}
+.halftone{position:fixed;inset:0;z-index:-3;pointer-events:none;opacity:.18;background-image:radial-gradient(#fff 1px,transparent 1.4px);background-size:13px 13px;mask-image:linear-gradient(120deg,#000,transparent 60%)}
+.progress{position:fixed;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--cyan),var(--lime),var(--pink));z-index:100}
+.cursor{position:fixed;width:220px;height:220px;border:1px solid #35e7e233;border-radius:50%;pointer-events:none;z-index:90;transform:translate(-50%,-50%);box-shadow:0 0 70px #35e7e20d,inset 0 0 70px #ff5d9108}
+.w{width:min(1240px,calc(100% - 42px));margin:auto}.mono,.tag{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.tag{font-size:10px;font-weight:800;letter-spacing:.15em;color:var(--cyan)}
+.hero{min-height:100vh;display:grid;align-items:center;position:relative;overflow:hidden}.hero:after{content:"連";position:absolute;right:-.04em;bottom:-.28em;font-family:"STKaiti","KaiTi",serif;font-size:min(52vw,680px);color:#ffffff035;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:38px;align-items:center}.hero h1{font-size:clamp(70px,12.6vw,170px);line-height:.71;letter-spacing:-.075em;margin:26px 0}.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--cyan)}.hero h1 .pop{color:var(--lime);text-shadow:6px 6px 0 #ff5d9145}
+.hero p{max-width:790px;color:#c2c9da;font-size:19px;line-height:1.75}.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:27px}.chips span{padding:8px 11px;border:1px solid #ffffff25;background:#ffffff07;font:700 10px ui-monospace;transform:skew(-7deg)}.chips span:nth-child(2n){border-color:#e7ff4d77;color:var(--lime)}.chips span:nth-child(3n){border-color:#ff5d9177;color:#ff9cbb}
+.poster{height:600px;position:relative;isolation:isolate}.poster-card{position:absolute;inset:55px 20px 45px 40px;border:2px solid var(--white);background:linear-gradient(150deg,#141b4d,#0c1030);transform:rotate(3deg);box-shadow:18px 18px 0 var(--pink);overflow:hidden}.poster-card:before{content:"LINK!";position:absolute;right:-18px;top:15px;font-size:105px;font-weight:1000;letter-spacing:-.08em;color:#ffffff07;transform:rotate(90deg)}.poster-ring{position:absolute;left:50%;top:46%;width:260px;height:260px;border:1px solid #35e7e277;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 55px #35e7e208,0 0 0 110px #ff5d9106}.avatar{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:155px;height:215px;filter:drop-shadow(0 15px 20px #0007)}
+.avatar .head{position:absolute;width:95px;height:95px;left:30px;top:8px;border-radius:52% 48% 46% 54%;background:linear-gradient(135deg,#ffe8d5,#f0bda9);border:2px solid #12162f}.avatar .hair{position:absolute;width:110px;height:90px;left:22px;top:-4px;background:#20284f;clip-path:polygon(8% 18%,35% 0,53% 13%,72% 2%,100% 32%,84% 79%,65% 62%,52% 93%,39% 62%,17% 80%,0 45%)}.avatar .body{position:absolute;width:145px;height:125px;left:5px;bottom:0;background:linear-gradient(145deg,var(--cyan),#237c9d);clip-path:polygon(18% 0,80% 0,100% 100%,0 100%);border:2px solid #111}.avatar:after{content:"LIAISON";position:absolute;left:-45px;bottom:18px;background:var(--lime);color:#111;padding:7px 11px;font:900 10px ui-monospace;transform:rotate(-9deg)}
+.sticker{position:absolute;padding:9px 12px;background:var(--white);color:#10152f;font:900 11px ui-monospace;box-shadow:5px 5px 0 #10152f}.s1{top:50px;left:5px;transform:rotate(-8deg)}.s2{right:0;bottom:70px;background:var(--lime);transform:rotate(8deg)}.s3{left:5px;bottom:5px;background:var(--pink);color:white;transform:rotate(4deg)}
+.sec{padding:105px 0;border-top:1px solid #ffffff18;position:relative}.sec.light{background:var(--paper);color:var(--ink)}.sec.light .lead{color:#4c5367}.sec h2{font-size:clamp(43px,6.3vw,82px);line-height:.94;letter-spacing:-.055em;margin:18px 0 28px}.lead{max-width:900px;color:#adb6ce;font-size:20px;line-height:1.8}
+.splash{display:inline-block;background:var(--pink);padding:5px 10px;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--lime)}
+.network{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:45px}.node{min-height:250px;border:1px solid #ffffff25;background:#ffffff07;padding:25px;position:relative;overflow:hidden;transition:.35s}.node:after{content:"";position:absolute;width:110px;height:110px;border:1px solid #35e7e233;border-radius:50%;right:-35px;bottom:-35px}.node:hover{transform:translateY(-7px) rotate(-.5deg);border-color:var(--cyan);box-shadow:8px 8px 0 #35e7e21f}.node:nth-child(2n):hover{box-shadow:8px 8px 0 #ff5d9125}.node b{font:800 10px ui-monospace;color:var(--cyan)}.node h3{font-size:27px;margin-top:65px}.node p{color:#aab4cd;line-height:1.7}.node.hub{background:var(--lime);color:#111;border-color:var(--lime);transform:rotate(1deg)}.node.hub b,.node.hub p{color:#111}
+.light .node{border-color:#151a3033;background:#fff9}.light .node p{color:#5d6272}.light .node:hover{border-color:#151a30}
+.quest{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin-top:45px}.quest article{min-height:275px;border:1px solid #ffffff20;padding:20px;background:#ffffff05;position:relative;transition:.35s}.quest article:hover{background:#35e7e20c;transform:translateY(-5px)}.quest b{font:900 10px ui-monospace;color:var(--lime)}.quest h3{margin-top:75px;font-size:22px}.quest p{font-size:14px;color:#a9b2ca;line-height:1.7}.quest article:after{content:"↗";position:absolute;right:13px;top:12px;color:var(--pink)}
+.chat{margin-top:45px;border:2px solid #111;background:#fff;color:#111;box-shadow:13px 13px 0 var(--cyan);display:grid;grid-template-columns:220px 1fr}.chat-side{background:#11162f;color:white;padding:25px}.chat-side b{color:var(--lime);font:800 10px ui-monospace}.chat-side h3{font-size:26px;margin-top:60px}.chat-main{padding:30px}.bubble{max-width:820px;border:1px solid #111;padding:18px 20px;margin:10px 0;line-height:1.75;background:#f5f0e7}.bubble.me{margin-left:auto;background:#e7ff4d}.chat-key{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px}.chat-key span{border:1px solid #111;padding:6px 9px;font:800 9px ui-monospace}
+.scenegrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:40px}.scene{min-height:260px;border:1px solid #171b3030;background:white;padding:28px;position:relative}.scene:before{content:attr(data-scene);position:absolute;right:20px;top:16px;font:900 10px ui-monospace;color:var(--pink)}.scene h3{font-size:29px;margin-top:65px}.scene p{color:#5e6475;line-height:1.75}.scene:hover h3{color:#6d4fff}
+.versus{display:grid;grid-template-columns:1fr 80px 1fr;gap:10px;align-items:stretch;margin-top:40px}.bad,.good{padding:30px;border:1px solid #ffffff25;min-height:280px}.bad{background:#ff5d910c}.good{background:#e7ff4d0b}.bad b{color:var(--pink)}.good b{color:var(--lime)}.versus .vs{display:grid;place-items:center;font:1000 26px Arial;color:#ffffff45}.bad h3,.good h3{font-size:28px;margin-top:60px}.bad p,.good p{color:#abb4cc;line-height:1.8}
+.handoff{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:40px}.handoff div{min-height:230px;padding:22px;border:1px solid #171b3030;background:#fff}.handoff b{font:900 10px ui-monospace;color:#7158e8}.handoff h3{margin-top:65px}.handoff p{color:#5e6475;line-height:1.7}
+.contact{margin-top:40px;background:#11162f;color:white;border:2px solid #111;padding:35px;box-shadow:12px 12px 0 var(--pink);display:grid;grid-template-columns:.55fr 1.45fr;gap:30px}.contact h3{font-size:36px}.contact-lines div{padding:12px 0;border-bottom:1px dashed #ffffff35;color:#b9c2d7}.contact-lines b{color:var(--cyan);font:800 10px ui-monospace}
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:40px}.skill{min-height:220px;border:1px solid #ffffff20;padding:23px;background:#ffffff05}.skill b{font:800 10px ui-monospace;color:var(--pink)}.skill h3{margin-top:55px}.skill p{color:#aab3ca}
+.join{background:linear-gradient(135deg,#e7ff4d 0 52%,#ff5d91 52%);color:#10152f;overflow:hidden}.join h2{font-size:clamp(62px,11vw,145px);line-height:.77}.join .lead{color:#171b30}.joinbox{display:grid;grid-template-columns:1fr 1fr;gap:10px}.joinbox article{background:#0d1232;color:white;padding:28px;min-height:300px;box-shadow:9px 9px 0 #ffffff88}.joinbox h3{font-size:28px}.joinbox li,.joinbox p{color:#c0c8dc;line-height:1.8}
+.faq{border-bottom:1px solid #ffffff20}.faq button{width:100%;border:0;background:none;color:white;padding:23px 0;display:flex;justify-content:space-between;text-align:left;font-size:18px;cursor:pointer}.faq button b{color:var(--lime);transition:.3s}.faq p{display:none;color:#adb6ce;line-height:1.8;padding:0 0 24px;max-width:900px}.faq.open p{display:block}.faq.open button b{transform:rotate(45deg)}
+.coda{min-height:95vh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle,#35e7e218,transparent 40%);position:relative;overflow:hidden}.coda:before{content:"縁";position:absolute;font-family:"STKaiti","KaiTi",serif;font-size:min(56vw,700px);color:#ffffff035}.coda h2{position:relative;font-family:"STKaiti","KaiTi",serif;font-size:clamp(48px,8vw,110px);line-height:1.2}.coda h2 span{color:var(--lime)}.coda p{position:relative;max-width:730px;margin:auto;color:#aeb7cf;line-height:1.9}.coda small{position:relative;color:var(--cyan);font:800 10px ui-monospace;letter-spacing:.3em}
+.sources{display:grid;grid-template-columns:1fr 1fr;gap:8px}.sources a{display:flex;justify-content:space-between;text-decoration:none;color:#aeb7cf;padding:13px 0;border-bottom:1px solid #ffffff1a;font-size:13px}.rv{opacity:0;transform:translateY(22px);transition:.75s}.rv.on{opacity:1;transform:none}footer{padding:55px 0;color:#65708c;font:10px ui-monospace;letter-spacing:.12em;border-top:1px solid #ffffff14}
+@media(max-width:850px){.hero-grid,.chat,.contact{grid-template-columns:1fr}.poster{height:480px}.network,.scenegrid{grid-template-columns:1fr 1fr}.quest{grid-template-columns:1fr 1fr}.handoff{grid-template-columns:1fr 1fr}.skills{grid-template-columns:1fr 1fr}.versus{grid-template-columns:1fr}.versus .vs{min-height:60px}.joinbox{grid-template-columns:1fr}}
+@media(max-width:560px){.network,.scenegrid,.quest,.handoff,.skills{grid-template-columns:1fr}.hero h1{font-size:67px}.sec{padding:78px 0}.poster{height:410px}.poster-card{inset:40px 15px}.cursor{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}.cursor{display:none}}
+
+/* === MOBILE EXPERIENCE V7 / aligned to Design Department mobile rhythm === */
+html,body{max-width:100%;overflow-x:hidden}
+img,svg,video,canvas{max-width:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+@media (max-width: 760px){
+  :root{--mobile-pad:18px}
+  html{scroll-padding-top:64px}
+  body{font-size:15px}
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 36px)!important;max-width:none!important;margin-left:auto!important;margin-right:auto!important}
+  nav{min-height:56px!important;height:56px!important;padding-left:0!important;padding-right:0!important}
+  nav .navin,.navin{width:calc(100% - 36px)!important;margin:auto!important;grid-template-columns:1fr auto!important;gap:10px!important}
+  .navlinks,.nav-links,.navmenu,.nav-menu{display:none!important}
+  .brand{font-size:12px!important;white-space:nowrap}
+  .brand small{font-size:6px!important;margin-left:5px!important}
+  .navstate,.nav-state{font-size:6px!important;letter-spacing:.08em!important;white-space:nowrap}
+  .hero{min-height:auto!important;padding-top:56px!important}
+  .hero-grid,.heroGrid,.hero-inner,.hero_inner{min-height:auto!important;grid-template-columns:1fr!important;display:grid!important}
+  .hero-copy{padding:54px 0 28px!important;min-width:0!important}
+  .hero h1{font-size:clamp(54px,18vw,82px)!important;line-height:.78!important;letter-spacing:-.065em!important;overflow-wrap:anywhere}
+  .hero h2{font-size:clamp(34px,11vw,54px)!important;line-height:.92!important}
+  .hero p,.hero-p,.hero-copy p{font-size:14px!important;line-height:1.75!important;max-width:100%!important}
+  .eyebrow,.kicker,.tag,.sys{font-size:7px!important;letter-spacing:.13em!important}
+  .meta,.chips{gap:5px!important}.meta span,.chips span{font-size:6px!important;padding:6px 7px!important}
+  .sec,section.sec{padding:72px 0!important}
+  .sec h2,section h2{font-size:clamp(38px,12vw,58px)!important;line-height:.96!important;letter-spacing:-.045em!important}
+  .lead{font-size:16px!important;line-height:1.75!important}
+  .big01,.big07,.indexbig,.index-big{font-size:92px!important;line-height:.72!important}
+  .cards,.services,.process,.diagnostic,.collab,.growth,.grid-cards,.card-grid{grid-template-columns:1fr!important;gap:8px!important}
+  .card,.service,.phase,.orgunit{min-height:0!important;padding:22px!important}
+  .card h3,.service h3,.phase h3,.orgunit h4{margin-top:34px!important}
+  .faq button{min-height:62px!important;padding:18px 0!important;font-size:15px!important;line-height:1.45!important;gap:14px!important}
+  .faq p{font-size:14px!important;line-height:1.75!important;padding-right:8px!important}
+  footer{padding-left:18px!important;padding-right:18px!important;line-height:1.7!important}
+  [style*="font-size:160px"],[style*="font-size:180px"],[style*="font-size:200px"]{font-size:88px!important}
+}
+@media (max-width: 390px){
+  .w,.wrap,.container,.shell,.inner{width:calc(100% - 28px)!important}
+  nav .navin,.navin{width:calc(100% - 28px)!important}
+  .hero h1{font-size:clamp(48px,17vw,68px)!important}
+  .sec h2,section h2{font-size:clamp(35px,11.5vw,49px)!important}
+  .lead{font-size:15px!important}
+}
+
+@media(max-width:760px){
+ .hero-grid,.heroGrid{grid-template-columns:1fr!important}.hero-art,.poster-art,.network-art{height:470px!important;min-height:470px!important}
+ .character,.anime-character{transform:scale(.78)!important;transform-origin:bottom center!important}
+ .network,.web,.constellation{max-width:100%!important}
+ .quest-grid,.scene-grid,.route-grid,.handoff-grid,.memory-grid,.growth-grid{grid-template-columns:1fr!important}
+ .coda{min-height:86svh!important}
+}
+</style></head><body style="padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)">
+<canvas id="webbg"></canvas><div class="halftone"></div><div class="progress"></div><div class="cursor"></div>
+
+<header class="hero"><div class="w hero-grid">
+<div><div class="tag">KUN'GANG / LIAISON CHANNEL / SIGNAL CONNECTED</div><h1>LINK<br>THE <span class="outline">WORLD.</span><br><span class="pop">一起连线！</span></h1><p>福州大学昆冈众创工作室 · 联络部。我们负责与校内外学生组织、企业、技术社区、专家导师与往届伙伴建立沟通渠道。<b style="color:white">连接不是“认识更多人”，而是让正确的人，在正确的时刻，为同一件事真正开始协作。</b></p><div class="chips"><span>CAMPUS</span><span>ENTERPRISE</span><span>COMMUNITY</span><span>EXPERT</span><span>ALUMNI</span><span>PROJECT</span></div></div>
+<div class="poster" aria-hidden="true"><div class="poster-card"><div class="poster-ring"></div><div class="avatar"><div class="body"></div><div class="head"></div><div class="hair"></div></div></div><div class="sticker s1">NEW SIGNAL!</div><div class="sticker s2">NETWORK QUEST ↗</div><div class="sticker s3">联络部 / LIAISON</div></div>
+</div></header>
+
+<main>
+<section class="sec light rv"><div class="w"><div class="tag">01 / WHY LIAISON</div><h2>联络部真正管理的，<br>是<span class="splash">关系如何产生价值。</span></h2><p class="lead">一张通讯录不等于一张网络。只有当信息被准确传递、资源被正确匹配、边界被尊重、合作被推进并留下组织记忆，一次“认识”才真正变成连接。</p>
+<div class="network"><div class="node"><b>CAMPUS</b><h3>校内学生组织</h3><p>活动共创、赛事协作、宣传互通和经验交流。</p></div><div class="node hub"><b>HUB / KUN'GANG</b><h3>昆冈众创</h3><p>项目、课程、赛事、传播与外部资源在这里交叉。联络部让信号进入，也让需求出去。</p></div><div class="node"><b>ENTERPRISE</b><h3>企业</h3><p>让校园里的技术、项目和人才更早接触真实行业环境。</p></div><div class="node"><b>COMMUNITY</b><h3>技术社区</h3><p>连接开源、AI等技术生态，把外部知识带进校园。</p></div><div class="node"><b>EXPERT</b><h3>专家 / 导师</h3><p>当项目需要专业判断，让真正匹配的人进入反馈回路。</p></div><div class="node"><b>ALUMNI</b><h3>往届伙伴</h3><p>让经验、行业认知和组织文化跨越届次继续流动。</p></div></div></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">02 / NETWORK QUEST</div><h2>连接不是随机遭遇，<br>而是一套<span style="color:var(--lime)">任务协议。</span></h2><p class="lead">每一次外联，都像一次多人协作任务。发出消息只是“接受任务”，真正完成要经过研究、价值判断、具体请求、边界对齐、正确交接和后续维护。</p>
+<div class="quest"><article><b>01 / RESEARCH</b><h3>侦察</h3><p>对方是谁？做过什么？为什么真正适合这件事？</p></article><article><b>02 / VALUE</b><h3>匹配</h3><p>我们需要什么？对方为什么值得参与？双方价值是否成立？</p></article><article><b>03 / ASK</b><h3>发信</h3><p>主题、时间、形式、人数、希望对方做什么，越具体越专业。</p></article><article><b>04 / ALIGN</b><h3>对齐</h3><p>宣传、材料、设备、现场、授权和双方责任提前确认。</p></article><article><b>05 / HANDOFF</b><h3>交接</h3><p>连接完成后，让真正负责内容与执行的人进入。</p></article><article><b>06 / FOLLOW</b><h3>续线</h3><p>致谢、反馈、资料回传，让一次合作成为下一次的基础。</p></article></div></div></section>
+
+<section class="sec light rv"><div class="w"><div class="tag">03 / FIRST MESSAGE</div><h2>第一封消息，<br>就是你的<span class="splash">角色登场。</span></h2>
+<div class="chat"><aside class="chat-side"><b>DM / OUTREACH</b><h3>技术社区<br>合作频道</h3><p style="color:#9ca7c5">STATUS<br>● ONLINE<br><br>RELATION<br>NEW CONTACT</p></aside><div class="chat-main"><div class="bubble">你好，请问有空合作吗？</div><div class="bubble" style="border-color:#ff5d91;color:#8d3151">△ 信息不足：身份？背景？合作内容？时间？为什么联系对方？</div><div class="bubble me">您好，我们是福州大学昆冈众创工作室。近期面向校内对 ______ 感兴趣的学生筹划 ______ 主题交流，预计听众主要为 ______。了解到贵团队长期在 ______ 方向开展高校/技术社区交流，因此希望探讨一次面向学生的分享或实践活动。</div><div class="bubble me">我们可提供校内活动组织、场地、学生招募、现场执行与后续内容传播，希望进一步确认主题方向、嘉宾形式、可行时间与实践环节。若近期不便，也非常感谢阅读，期待未来有合适机会继续交流。</div><div class="chat-key"><span>身份清楚</span><span>为什么找TA</span><span>请求具体</span><span>双向价值</span><span>尊重边界</span></div></div></div>
+</div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">04 / CONNECTION SCENES</div><h2>真正的联络工作，<br>发生在不同的<span style="color:var(--cyan)">剧情场景。</span></h2><div class="scenegrid">
+<article class="scene" data-scene="SCENE A"><h3>项目需要行业专家</h3><p>先让项目团队整理真正的问题，再寻找匹配资源。不是把项目书群发出去“求指导”，而是让双方都知道为什么值得见面。</p></article>
+<article class="scene" data-scene="SCENE B"><h3>想办一次 AI 分享</h3><p>先明确听众是谁、希望学到什么，再寻找企业或技术社区；连接建立后，把内容、会务、传播交给对应部门。</p></article>
+<article class="scene" data-scene="SCENE C"><h3>学生组织共创</h3><p>明确双方目标、资源、宣传与执行责任。真正的合作不是海报上多一个 Logo，而是双方都参与创造价值。</p></article>
+<article class="scene" data-scene="SCENE D"><h3>邀请往届伙伴回来</h3><p>一届成员离开校园，不代表关系结束。项目经验、行业认知和组织文化都可以通过长期连接继续回来。</p></article>
+</div></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">05 / BAD END? GOOD END!</div><h2>外联也有“坏结局”。<br>但大多可以提前避免。</h2><div class="versus"><article class="bad"><b>BAD ROUTE</b><h3>“学长您好，有空合作吗？”</h3><p>没有上下文，没有具体事项，没有时间，也不知道为什么找对方。</p></article><div class="vs">VS</div><article class="good"><b>GOOD ROUTE</b><h3>一句话先讲清上下文</h3><p>身份 + 为什么联系 + 具体事项 + 时间范围 + 希望讨论的下一步。</p></article></div><div class="versus"><article class="bad"><b>BAD ROUTE</b><h3>发完消息无限催</h3><p>把自己的紧急变成对方的义务，连接很容易在开始之前就失去信任。</p></article><div class="vs">VS</div><article class="good"><b>GOOD ROUTE</b><h3>有节奏地跟进</h3><p>礼貌确认、补充必要信息、给出选择，也接受对方暂时不方便。</p></article></div></div></section>
+
+<section class="sec light rv"><div class="w"><div class="tag">06 / HANDOFF MAP</div><h2>联络部不是“全都自己做”。<br>我们负责把线<span class="splash">接到正确的人。</span></h2><div class="handoff">
+<div><b>→ OFFICE</b><h3>办公室</h3><p>场地、嘉宾信息、设备与时间确认后进入会务执行。</p></div><div><b>→ SCI-TALK</b><h3>宣讲部</h3><p>技术分享与科创宣讲进入内容研究和现场表达。</p></div><div><b>→ PROJECT</b><h3>项目部</h3><p>专家或行业资源进入具体项目时，交给项目接口继续推进。</p></div><div><b>→ EDITORIAL</b><h3>采编部</h3><p>同步嘉宾背景、采访边界和可公开信息。</p></div><div><b>→ DESIGN</b><h3>设计部</h3><p>确认合作品牌、Logo、视觉规范和素材授权。</p></div></div></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">07 / RELATIONSHIP MEMORY</div><h2>一次活动结束，<br>关系不应该<span style="color:var(--pink)">掉线。</span></h2><div class="contact"><div><div class="tag">CONTACT CARD / SAVE POINT</div><h3>把一次联系<br>变成组织记忆。</h3><p style="color:#aeb8d0;line-height:1.8">真正专业的联络，不依赖某一个人的聊天记录。合作背景、联系人角色、历史事项和注意边界都值得被妥善记录。</p></div><div class="contact-lines"><div><b>ORGANIZATION</b>　组织 / 公司：__________</div><div><b>CONTACT</b>　联系人与角色：__________</div><div><b>FIRST LINK</b>　第一次合作背景：__________</div><div><b>INTEREST</b>　对方关注方向：__________</div><div><b>HISTORY</b>　我们曾共同完成：__________</div><div><b>BOUNDARY</b>　沟通注意事项：__________</div><div><b>NEXT</b>　后续可能性：__________</div></div></div></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">08 / CONNECTIONS KUN'GANG HAS MADE</div><h2>昆冈连接过的，<br>不只有一种世界。</h2><div class="network">
+<div class="node"><b>TECH COMPANY</b><h3>华为相关校园活动</h3><p>公开资料记录华为昇腾、openEuler 等校园技术交流，让学生接触更大的行业技术生态。</p></div>
+<div class="node"><b>FINTECH</b><h3>兴业证券金融科技部</h3><p>公开材料记录围绕校企项目、创新创业就业等方向开展共建与交流。</p></div>
+<div class="node"><b>AI / OPEN</b><h3>百度 / Datawhale 等</h3><p>企业与开放技术社区共同构成校园创新实践可连接的外部网络。</p></div>
+<div class="node"><b>PROJECT</b><h3>专家与行业资源</h3><p>项目路演、企业调研和专家辅导，让外部连接进入项目成长过程。</p></div>
+<div class="node"><b>COMMUNITY</b><h3>学生社区</h3><p>昆冈与校园创新空间、学生组织和科创活动共同构成内部协作网络。</p></div>
+<div class="node"><b>PEER</b><h3>朋辈与往届成员</h3><p>传帮带与经验分享让关系跨越项目、年级和届次继续发生作用。</p></div>
+</div></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">09 / LEVEL UP</div><h2>你练的不是“社交值”，<br>而是一整套<span style="color:var(--lime)">协作能力。</span></h2><div class="skills">
+<div class="skill"><b>MESSAGE</b><h3>信息表达</h3><p>把复杂背景压缩成别人愿意读完、也能马上理解的消息。</p></div><div class="skill"><b>JUDGEMENT</b><h3>关系判断</h3><p>知道谁真正适合这件事，而不是盲目扩大联系人。</p></div><div class="skill"><b>BOUNDARY</b><h3>边界意识</h3><p>尊重时间、授权、合作范围与拒绝。</p></div><div class="skill"><b>FOLLOW</b><h3>持续跟进</h3><p>连接不是发出第一条消息，而是把事情推动到下一步。</p></div><div class="skill"><b>VALUE</b><h3>双向价值</h3><p>不只问“我们需要什么”，也理解对方为什么值得参与。</p></div><div class="skill"><b>HANDOFF</b><h3>协作交接</h3><p>让专业的人在正确节点接棒，而不是把所有工作留在自己手里。</p></div><div class="skill"><b>MEMORY</b><h3>关系沉淀</h3><p>让组织记住合作，而不是每届从零开始找联系人。</p></div><div class="skill"><b>COURAGE</b><h3>主动发信</h3><p>学会在准备充分后主动开口，也坦然接受没有回复和被拒绝。</p></div>
+</div></div></section>
+
+<section class="sec join rv"><div class="w"><div class="tag" style="color:#10152f">10 / JOIN LIAISON</div><h2>READY TO<br>CONNECT?</h2><p class="lead">不需要是“社牛”。比热闹更重要的是清楚、可靠、尊重边界，以及愿意把一条线认真接到下一站。</p><div class="joinbox"><article><h3>我们希望你带来的</h3><ul><li>愿意主动沟通，但不冒犯别人。</li><li>能把事情说清楚，也愿意认真听。</li><li>面对拒绝不会把它理解成个人否定。</li><li>对企业、技术社区、学生组织或人与人的协作感兴趣。</li><li>答应的事情愿意持续跟进。</li></ul></article><article><h3>你不需要提前拥有的</h3><p>不需要认识很多企业，不需要自带“人脉”，也不要求性格外向。联系人可以慢慢积累，表达方式可以练，真正重要的是你愿不愿意理解双方、尊重边界，并把连接做得可靠。</p><div class="chips"><span>NO NETWORK REQUIRED</span><span>LEARN BY DOING</span><span>TEAM QUEST</span></div></article></div></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">11 / FAQ CHANNEL</div><h2>加入之前，<br>先把疑问<span style="color:var(--cyan)">连上线。</span></h2>
+<div class="faq"><button><span>Q01　联络部是不是一定要很会社交？</span><b>＋</b></button><p>不需要成为所谓“社牛”。礼貌、清楚、可靠，知道为什么联系、要谈什么、怎样跟进，往往比外向更重要。</p></div>
+<div class="faq"><button><span>Q02　没有任何人脉可以报名吗？</span><b>＋</b></button><p>可以。联络部不是招“自带资源的人”，而是一起学习怎样研究对象、建立联系、维护合作与沉淀组织关系。</p></div>
+<div class="faq"><button><span>Q03　会不会经常被拒绝？</span><b>＋</b></button><p>有可能。尊重拒绝本身就是联络工作的专业性之一。</p></div>
+<div class="faq"><button><span>Q04　第一次联系别人怎么写？</span><b>＋</b></button><p>身份 + 背景 + 为什么找对方 + 具体事项 + 双方价值 + 下一步，尽量让对方读完就知道怎样回应。</p></div>
+<div class="faq"><button><span>Q05　会接触企业或技术社区吗？</span><b>＋</b></button><p>公开资料显示昆冈存在多类校企和技术社区交流；具体成员参与哪些对接取决于当期实际项目与活动。</p></div>
+<div class="faq"><button><span>Q06　联络部和办公室有什么区别？</span><b>＋</b></button><p>办公室更偏内部组织运行与保障；联络部重点在校内外沟通渠道和资源连接，两者会在活动落地时协作。</p></div>
+<div class="faq"><button><span>Q07　联络成功后是不是还要自己把活动全做完？</span><b>＋</b></button><p>不是。联络的重要能力之一就是正确交接，让办公室、宣讲、项目、采编、设计等专业接口进入。</p></div>
+<div class="faq"><button><span>Q08　性格比较慢热适合吗？</span><b>＋</b></button><p>可以。慢热不等于不会沟通。充分准备、信息清楚和稳定跟进同样能建立很好的合作体验。</p></div>
+<div class="faq"><button><span>Q09　最值得获得的能力是什么？</span><b>＋</b></button><p>把陌生关系转化为可靠协作的能力：研究、表达、判断、边界、跟进、交接和长期维护。</p></div>
+<div class="faq"><button><span>Q10　什么样的人最适合？</span><b>＋</b></button><p>对人与组织如何产生合作感兴趣，愿意主动迈出第一步，又能尊重别人时间和边界的人。</p></div>
+</div></section>
+
+<section class="coda rv"><div class="w"><h2>海内存知己，<br><span>一线亦相连。</span></h2><p>联络的意义，从来不是把世界变成通讯录。是当一个项目需要答案、一场分享需要声音、一群人需要彼此看见时，我们知道该把哪一条线，认真地接过去。</p><small>EVERY CONNECTION BEGINS WITH A SIGNAL · EVERY RELATIONSHIP GROWS WITH TRUST</small></div></section>
+
+<section class="sec rv"><div class="w"><div class="tag">12 / PUBLIC BASIS</div><h2>页面内容依据</h2><div class="sources">
+<a href="https://ccds.fzu.edu.cn/info/1161/11445.htm" target="_blank" rel="noopener"><span>福州大学计算机与大数据学院 · 科创育人公开总结</span><b>↗</b></a>
+<a href="https://ccds.fzu.edu.cn/info/1120/9747.htm" target="_blank" rel="noopener"><span>昆冈校企 / 技术社区 / 金课相关公开材料</span><b>↗</b></a>
+<a href="https://news.fzu.edu.cn/info/1014/124192.htm" target="_blank" rel="noopener"><span>福州大学新闻网 · 项目路演与企业调研</span><b>↗</b></a>
+<a href="https://stuic.fzu.edu.cn/xssq/gpqfc/bxyBq.htm" target="_blank" rel="noopener"><span>校园创新实践空间与学生社区公开信息</span><b>↗</b></a>
+</div></div></section>
+</main><footer><div class="w">KUN'GANG / LIAISON DEPARTMENT · ANIME POSTER × NETWORK WEB × YOUTH SIGNAL</div></footer>
+
+<script>
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')}),{threshold:.05});document.querySelectorAll('.rv').forEach(e=>io.observe(e));
+document.querySelectorAll('.faq button').forEach(b=>b.onclick=()=>b.parentElement.classList.toggle('open'));
+const prog=document.querySelector('.progress');addEventListener('scroll',()=>{let d=document.documentElement;prog.style.width=(100*d.scrollTop/(d.scrollHeight-d.clientHeight))+'%'},{passive:true});
+const cur=document.querySelector('.cursor');if(!reduce)addEventListener('pointermove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px'});else cur.style.display='none';
+
+// Animated spider-web / connection topology
+const c=document.getElementById('webbg'),x=c.getContext('2d');let W,H,D=Math.min(devicePixelRatio||1,2),pts=[],mouse={x:-999,y:-999};
+function resize(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;c.style.width=W+'px';c.style.height=H+'px';x.setTransform(D,0,0,D,0,0);seed()}
+function seed(){let n=Math.max(28,Math.min(58,Math.floor(W/26)));pts=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.16,vy:(Math.random()-.5)*.16,r:1+Math.random()*1.7,p:Math.random()*6.28}))}
+addEventListener('pointermove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
+function frame(t){x.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++){let a=pts[i];if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}for(let j=i+1;j<pts.length;j++){let b=pts[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);if(d<170){x.strokeStyle=`rgba(53,231,226,${(1-d/170)*.13})`;x.lineWidth=.65;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}}let dm=Math.hypot(a.x-mouse.x,a.y-mouse.y);if(dm<210){x.strokeStyle=`rgba(231,255,77,${(1-dm/210)*.28})`;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(mouse.x,mouse.y);x.stroke()}x.fillStyle=i%7===0?'rgba(255,93,145,.72)':'rgba(53,231,226,.6)';x.beginPath();x.arc(a.x,a.y,a.r,0,6.283);x.fill()}if(!reduce)requestAnimationFrame(frame)}
+resize();frame(0);addEventListener('resize',resize);
+</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"45c2bf8136a245cd97f1c2e9a96c0730","spa":2}' crossorigin="anonymous"></script>
+</body></html>
